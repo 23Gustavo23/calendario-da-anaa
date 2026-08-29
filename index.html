@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Um pequeno presente ♡</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- =========================
+         TELA INICIAL
+    ========================== -->
+
+    <section id="welcomeScreen" class="welcome-screen">
+
+        <div class="welcome-content">
+
+            <div class="little-flower">✿</div>
+
+            <p class="small-title">um pequeno presente</p>
+
+            <h1>Para você ♡</h1>
+
+            <p class="welcome-text">
+                Um ano inteiro guardando<br>
+                pequenos momentos.
+            </p>
+
+            <button id="startButton" class="main-button">
+                entrar ♡
+            </button>
+
+            <p class="music-hint">
+                ♫ coloque uma música e aproveite
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SITE PRINCIPAL
+    ========================== -->
+
+    <main id="mainSite" class="main-site hidden">
+
+        <header class="header">
+
+            <div class="header-decoration">✿</div>
+
+            <p>um ano inteiro...</p>
+
+            <h1>para você ♡</h1>
+
+            <div class="header-decoration">✿</div>
+
+        </header>
+
+
+        <!-- CONTROLES DO CALENDÁRIO -->
+
+        <section class="calendar-container">
+
+            <div class="calendar-top">
+
+                <button id="previousMonth" class="month-button">
+                    ‹
+                </button>
+
+                <div>
+                    <h2 id="monthName">Janeiro</h2>
+                    <span id="yearNumber">2026</span>
+                </div>
+
+                <button id="nextMonth" class="month-button">
+                    ›
+                </button>
+
+            </div>
+
+
+            <!-- DIAS DA SEMANA -->
+
+            <div class="weekdays">
+
+                <span>dom</span>
+                <span>seg</span>
+                <span>ter</span>
+                <span>qua</span>
+                <span>qui</span>
+                <span>sex</span>
+                <span>sáb</span>
+
+            </div>
+
+
+            <!-- DIAS -->
+
+            <div id="calendarDays" class="calendar-days"></div>
+
+        </section>
+
+
+        <!-- FRASE ABAIXO DO CALENDÁRIO -->
+
+        <section class="bottom-message">
+
+            <span>✿</span>
+
+            <p>
+                algumas datas guardam<br>
+                pequenas surpresas...
+            </p>
+
+            <span>✿</span>
+
+        </section>
+
+
+        <!-- CONTROLE DE MÚSICA -->
+
+        <button id="musicButton" class="music-button" title="Música">
+
+            ♫
+
+        </button>
+
+        <!--
+            Coloque aqui um arquivo de áudio que você tenha
+            autorização para usar.
+
+            Exemplo:
+
+            <audio id="backgroundMusic" loop>
+                <source src="musica.mp3" type="audio/mpeg">
+            </audio>
+        -->
+
+        <audio id="backgroundMusic" loop></audio>
+
+    </main>
+
+
+    <!-- =========================
+         MODAL DAS MENSAGENS
+    ========================== -->
+
+    <div id="messageModal" class="modal hidden">
+
+        <div class="modal-overlay"></div>
+
+        <div class="message-card">
+
+            <button id="closeModal" class="close-button">
+                ×
+            </button>
+
+            <div class="card-flower">
+                ✿
+            </div>
+
+            <p id="modalDate" class="modal-date">
+                10 de janeiro
+            </p>
+
+            <h2 id="modalTitle">
+                Uma pequena mensagem ♡
+            </h2>
+
+            <div id="modalContent" class="modal-content">
+                Sua mensagem aparecerá aqui.
+            </div>
+
+            <div id="modalPhotoContainer" class="modal-photo-container hidden">
+
+                <img id="modalPhoto" src="" alt="Foto especial">
+
+            </div>
+
+            <div class="card-heart">
+                ♡
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
