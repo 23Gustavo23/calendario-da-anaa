@@ -103,6 +103,112 @@ const specialMessages = {
 
 
 /* ========================================
+   MENSAGENS DOS SÁBADOS
+   SETEMBRO A DEZEMBRO DE 2026
+======================================== */
+
+const saturdayMessages = {
+
+    /* SETEMBRO */
+
+    "2026-09-05": {
+        title: "05 de setembro ♡",
+        message: "Escreva aqui a mensagem do dia 05."
+    },
+
+    "2026-09-12": {
+        title: "12 de setembro ♡",
+        message: "Escreva aqui a mensagem do dia 12."
+    },
+
+    "2026-09-19": {
+        title: "19 de setembro ♡",
+        message: "Escreva aqui a mensagem do dia 19."
+    },
+
+    "2026-09-26": {
+        title: "26 de setembro ♡",
+        message: "Escreva aqui a mensagem do dia 26."
+    },
+
+
+    /* OUTUBRO */
+
+    "2026-10-03": {
+        title: "03 de outubro ♡",
+        message: "Escreva aqui a mensagem do dia 03."
+    },
+
+    "2026-10-10": {
+        title: "10 de outubro ♡",
+        message: "Escreva aqui a mensagem do dia 10."
+    },
+
+    "2026-10-17": {
+        title: "17 de outubro ♡",
+        message: "Escreva aqui a mensagem do dia 17."
+    },
+
+    "2026-10-24": {
+        title: "24 de outubro ♡",
+        message: "Escreva aqui a mensagem do dia 24."
+    },
+
+    "2026-10-31": {
+        title: "31 de outubro ♡",
+        message: "Escreva aqui a mensagem do dia 31."
+    },
+
+
+    /* NOVEMBRO */
+
+    "2026-11-07": {
+        title: "07 de novembro ♡",
+        message: "Escreva aqui a mensagem do dia 07."
+    },
+
+    "2026-11-14": {
+        title: "14 de novembro ♡",
+        message: "Escreva aqui a mensagem do dia 14."
+    },
+
+    "2026-11-21": {
+        title: "21 de novembro ♡",
+        message: "Escreva aqui a mensagem do dia 21."
+    },
+
+    "2026-11-28": {
+        title: "28 de novembro ♡",
+        message: "Escreva aqui a mensagem do dia 28."
+    },
+
+
+    /* DEZEMBRO */
+
+    "2026-12-05": {
+        title: "05 de dezembro ♡",
+        message: "Escreva aqui a mensagem do dia 05."
+    },
+
+    "2026-12-12": {
+        title: "12 de dezembro ♡",
+        message: "Escreva aqui a mensagem do dia 12."
+    },
+
+    "2026-12-19": {
+        title: "19 de dezembro ♡",
+        message: "Escreva aqui a mensagem do dia 19."
+    },
+
+    "2026-12-26": {
+        title: "26 de dezembro ♡",
+        message: "Escreva aqui a mensagem do dia 26."
+    }
+
+};
+
+
+/* ========================================
    FOTOS
 ======================================== */
 
@@ -137,6 +243,7 @@ const photos = {
     "2026-01-25": "10.jpg"
 
 };
+
 
 /* ========================================
    VARIÁVEIS DO CALENDÁRIO
@@ -339,21 +446,12 @@ function renderCalendar() {
         currentYear;
 
 
-    /*
-        DESABILITAR NAVEGAÇÃO
-        FORA DE 2026
-    */
-
     previousMonth.disabled =
         currentMonth === 0;
 
     nextMonth.disabled =
         currentMonth === 11;
 
-
-    /*
-        PRIMEIRO DIA
-    */
 
     const firstDay =
         new Date(
@@ -363,10 +461,6 @@ function renderCalendar() {
         ).getDay();
 
 
-    /*
-        QUANTOS DIAS
-    */
-
     const daysInMonth =
         new Date(
             currentYear,
@@ -374,10 +468,6 @@ function renderCalendar() {
             0
         ).getDate();
 
-
-    /*
-        ESPAÇOS ANTES DO PRIMEIRO DIA
-    */
 
     for (
         let i = 0;
@@ -399,10 +489,6 @@ function renderCalendar() {
 
     }
 
-
-    /*
-        CRIAR OS DIAS
-    */
 
     for (
         let day = 1;
@@ -429,18 +515,10 @@ function renderCalendar() {
             );
 
 
-        /*
-            TEM MENSAGEM?
-        */
-
         const hasSpecialMessage =
             specialMessages[dateKey]
             !== undefined;
 
-
-        /*
-            É SÁBADO?
-        */
 
         const hasSaturdayMessage =
             isSaturdayMessage(
@@ -450,18 +528,10 @@ function renderCalendar() {
             );
 
 
-        /*
-            TEM FOTO?
-        */
-
         const hasPhoto =
             photos[dateKey]
             !== undefined;
 
-
-        /*
-            DESTACAR DATA
-        */
 
         if (
             hasSpecialMessage ||
@@ -494,10 +564,6 @@ function renderCalendar() {
 
         }
 
-
-        /*
-            PERMITIR CLIQUE
-        */
 
         if (
             hasSpecialMessage ||
@@ -533,6 +599,9 @@ function openMessage(dateKey) {
     const message =
         specialMessages[dateKey];
 
+    const saturdayMessage =
+        saturdayMessages[dateKey];
+
     const photo =
         photos[dateKey];
 
@@ -551,17 +620,13 @@ function openMessage(dateKey) {
         Number(parts[2]);
 
 
-    /*
-        DATA
-    */
-
     modalDate.textContent =
         `${day} de ${months[month]} de ${year}`;
 
 
-    /*
-        MENSAGEM
-    */
+    /* ====================================
+       MENSAGEM
+    ==================================== */
 
     if (message) {
 
@@ -573,20 +638,30 @@ function openMessage(dateKey) {
 
     }
 
+    else if (saturdayMessage) {
+
+        modalTitle.textContent =
+            saturdayMessage.title;
+
+        modalContent.textContent =
+            saturdayMessage.message;
+
+    }
+
     else {
 
         modalTitle.textContent =
             "Uma mensagem para você ♡";
 
         modalContent.textContent =
-            "Aqui vai uma frase especial para este sábado...";
+            "Aqui vai uma frase especial para este dia...";
 
     }
 
 
-    /*
-        FOTOS
-    */
+    /* ====================================
+       FOTOS
+    ==================================== */
 
     modalPhotoContainer.innerHTML = "";
 
@@ -610,19 +685,15 @@ function openMessage(dateKey) {
                 const image =
                     document.createElement("img");
 
-
                 image.src =
                     photoPath;
-
 
                 image.alt =
                     "Foto especial";
 
-
                 image.classList.add(
                     "modal-gallery-photo"
                 );
-
 
                 modalPhotoContainer.appendChild(
                     image
@@ -642,9 +713,9 @@ function openMessage(dateKey) {
     }
 
 
-    /*
-        MOSTRAR MODAL
-    */
+    /* ====================================
+       MOSTRAR MODAL
+    ==================================== */
 
     messageModal.classList.remove(
         "hidden"
@@ -672,10 +743,6 @@ closeModal.addEventListener(
 );
 
 
-/*
-    FECHAR CLICANDO FORA
-*/
-
 document
     .querySelector(".modal-overlay")
     .addEventListener(
@@ -683,10 +750,6 @@ document
         closeMessage
     );
 
-
-/*
-    FECHAR COM ESC
-*/
 
 document.addEventListener(
     "keydown",
@@ -724,6 +787,8 @@ previousMonth.addEventListener(
 
         renderCalendar();
 
+        loadNotesForCurrentMonth();
+
     }
 );
 
@@ -743,6 +808,8 @@ nextMonth.addEventListener(
         currentMonth++;
 
         renderCalendar();
+
+        loadNotesForCurrentMonth();
 
     }
 );
@@ -765,35 +832,41 @@ startButton.addEventListener(
         );
 
 
-        /*
-            TENTAR INICIAR MÚSICA
-        */
+        /* ================================
+           MÚSICA
+        ================================= */
 
         if (
-            backgroundMusic.src
+            !backgroundMusic.currentSrc
         ) {
 
-            backgroundMusic
-                .play()
-                .then(() => {
+            backgroundMusic.src =
+                "musica.mp3";
 
-                    musicPlaying =
-                        true;
-
-                    musicButton.classList.add(
-                        "playing"
-                    );
-
-                })
-                .catch(() => {
-
-                    console.log(
-                        "A música não pôde iniciar."
-                    );
-
-                });
+            backgroundMusic.load();
 
         }
+
+
+        backgroundMusic
+            .play()
+            .then(() => {
+
+                musicPlaying =
+                    true;
+
+                musicButton.classList.add(
+                    "playing"
+                );
+
+            })
+            .catch(() => {
+
+                console.log(
+                    "A música não pôde iniciar."
+                );
+
+            });
 
     }
 );
@@ -807,9 +880,12 @@ musicButton.addEventListener(
     "click",
     () => {
 
-        if (!backgroundMusic.currentSrc) {
+        if (
+            !backgroundMusic.currentSrc
+        ) {
 
-            backgroundMusic.src = "musica.mp3";
+            backgroundMusic.src =
+                "musica.mp3";
 
             backgroundMusic.load();
 
@@ -820,13 +896,15 @@ musicButton.addEventListener(
 
             backgroundMusic.pause();
 
-            musicPlaying = false;
+            musicPlaying =
+                false;
 
             musicButton.classList.remove(
                 "playing"
             );
 
-            musicButton.textContent = "♫";
+            musicButton.textContent =
+                "♫";
 
         }
 
@@ -836,13 +914,15 @@ musicButton.addEventListener(
                 .play()
                 .then(() => {
 
-                    musicPlaying = true;
+                    musicPlaying =
+                        true;
 
                     musicButton.classList.add(
                         "playing"
                     );
 
-                    musicButton.textContent = "♫";
+                    musicButton.textContent =
+                        "♫";
 
                 })
                 .catch((error) => {
@@ -862,6 +942,7 @@ musicButton.addEventListener(
 
 /* ========================================
    CANTINHO DE ANOTAÇÕES
+   UMA ANOTAÇÃO DIFERENTE POR MÊS
 ======================================== */
 
 const notesInput =
@@ -880,34 +961,51 @@ const saveMessage =
     );
 
 
-/*
-    CARREGAR ANOTAÇÃO SALVA
-*/
+/* ========================================
+   CHAVE DAS ANOTAÇÕES
+======================================== */
 
-const savedNotes =
-    localStorage.getItem(
-        "calendarNotes"
-    );
+function getNotesKey() {
 
-
-if (savedNotes) {
-
-    notesInput.value =
-        savedNotes;
+    return `calendarNotes-${currentYear}-${String(
+        currentMonth + 1
+    ).padStart(2, "0")}`;
 
 }
 
 
-/*
-    SALVAR
-*/
+/* ========================================
+   CARREGAR NOTAS DO MÊS
+======================================== */
+
+function loadNotesForCurrentMonth() {
+
+    const savedNotes =
+        localStorage.getItem(
+            getNotesKey()
+        );
+
+
+    notesInput.value =
+        savedNotes || "";
+
+
+    saveMessage.textContent =
+        "suas anotações ficam salvas neste navegador";
+
+}
+
+
+/* ========================================
+   SALVAR NOTAS DO MÊS
+======================================== */
 
 saveNotes.addEventListener(
     "click",
     () => {
 
         localStorage.setItem(
-            "calendarNotes",
+            getNotesKey(),
             notesInput.value
         );
 
@@ -935,3 +1033,5 @@ saveNotes.addEventListener(
 ======================================== */
 
 renderCalendar();
+
+loadNotesForCurrentMonth();
