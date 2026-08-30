@@ -109,7 +109,9 @@ const specialMessages = {
 
 const saturdayMessages = {
 
-    /* SETEMBRO */
+    /* ====================================
+       SETEMBRO
+    ==================================== */
 
     "2026-09-05": {
         title: "05 de setembro ♡",
@@ -126,91 +128,234 @@ Voce nao precisa saber tudo sobre o amanha para confiar nAquele que ja esta la.`
 
     "2026-09-12": {
         title: "12 de setembro ♡",
-        message: "Escreva aqui a mensagem do dia 12."
+        message: `Quando a saudade chegar
+
+Texto biblico: Salmos 42:6
+
+Reflexao:
+Havera dias em que a saudade vai apertar. Dos amigos, da familia, dos lugares conhecidos e das conversas simples. E tudo bem. Sentir saudade nao significa que voce tomou a decisao errada. Significa apenas que existem pessoas e lugares que sao importantes para voce.
+
+Lembrete:
+Voce pode sentir saudade de casa e, ainda assim, estar exatamente onde Deus quer que voce esteja.`
     },
 
     "2026-09-19": {
         title: "19 de setembro ♡",
-        message: "Escreva aqui a mensagem do dia 19."
+        message: `Deus tambem esta la
+
+Texto biblico: Genesis 28:16
+
+Reflexao:
+Talvez a Bahia pareca distante, diferente e, no comeco, ate estranha. Mas Deus nao ficou para tras junto com tudo aquilo que voce conhece. Ele ja estava la antes de voce chegar.
+
+Lembrete:
+O lugar pode ser novo para voce, mas nunca sera novo para Deus.`
     },
 
     "2026-09-26": {
         title: "26 de setembro ♡",
-        message: "Escreva aqui a mensagem do dia 26."
+        message: `Pequenos comecos
+
+Texto biblico: Zacarias 4:10
+
+Reflexao:
+Voce nao precisa chegar e imediatamente se sentir em casa. Nao precisa construir amizades profundas em poucos dias, entender tudo ou ter a vida organizada. De tempo ao tempo. Toda grande historia comeca de maneira pequena.
+
+Lembrete:
+Tenha paciencia com o processo. Criar raizes leva tempo.`
     },
 
 
-    /* OUTUBRO */
+    /* ====================================
+       OUTUBRO
+       PERMANECER MESMO QUANDO FOR DIFICIL
+    ==================================== */
 
     "2026-10-03": {
         title: "03 de outubro ♡",
-        message: "Escreva aqui a mensagem do dia 03."
+        message: `Quando ninguem conhece voce
+
+Texto biblico: Salmos 139:1-3
+
+Reflexao:
+Deus conhece aquilo que ninguem mais conhece. Ele sabe o que voce pensa, aquilo que sente e ate os silencios que voce nao consegue explicar.
+
+Em um lugar onde talvez ninguem conheca sua historia, existe Alguem que conhece cada capitulo dela.
+
+Lembrete:
+Voce nao precisa ser conhecida por todos para ser completamente conhecida por Deus.`
     },
 
     "2026-10-10": {
         title: "10 de outubro ♡",
-        message: "Escreva aqui a mensagem do dia 10."
+        message: `Nao tenha pressa para florescer
+
+Texto biblico: Eclesiastes 3:11
+
+Reflexao:
+Voce nao precisa se cobrar para que tudo aconteca rapido. Algumas amizades precisam de tempo. Alguns sonhos precisam amadurecer. Algumas respostas so chegam depois de muita espera.
+
+Lembrete:
+O tempo de Deus nao esta atrasado so porque nao coincide com a sua pressa.`
     },
 
     "2026-10-17": {
         title: "17 de outubro ♡",
-        message: "Escreva aqui a mensagem do dia 17."
+        message: `A solidao nao e abandono
+
+Texto biblico: Salmos 73:23
+
+Reflexao:
+Existirao momentos em que voce estara fisicamente sozinha. Mas existe uma diferenca enorme entre estar sozinha e estar abandonada. A presenca de Deus nao depende de quantas pessoas estao ao seu redor.
+
+Lembrete:
+Mesmo quando o quarto estiver silencioso, voce nunca estara verdadeiramente so.`
     },
 
     "2026-10-24": {
         title: "24 de outubro ♡",
-        message: "Escreva aqui a mensagem do dia 24."
+        message: `Quando der vontade de voltar
+
+Texto biblico: Rute 1:16
+
+Reflexao:
+Rute escolheu permanecer em um caminho desconhecido, deixando para tras aquilo que conhecia. Sua historia nos lembra que algumas decisoes importantes exigem coragem antes de trazer qualquer certeza.
+
+Talvez voce tambem esteja vivendo uma fase assim: caminhando pela fe antes de conseguir enxergar o resultado.
+
+Lembrete:
+Coragem nao e nao sentir medo. E continuar confiando mesmo quando ele aparece.`
     },
 
     "2026-10-31": {
         title: "31 de outubro ♡",
-        message: "Escreva aqui a mensagem do dia 31."
+        message: `Deus trabalha no escondido
+
+Texto biblico: Rute 2:3
+
+Reflexao:
+Rute saiu simplesmente para fazer aquilo que precisava fazer naquele dia. Ela nao sabia que aquele caminho aparentemente comum faria parte de uma historia muito maior.
+
+Talvez muitos dos seus dias sejam assim: comuns, silenciosos, sem nada aparentemente especial. Mas Deus pode estar construindo coisas importantes justamente nesses dias.
+
+Lembrete:
+Nem tudo que Deus esta fazendo precisa ser percebido imediatamente.`
     },
 
 
-    /* NOVEMBRO */
+    /* ====================================
+       NOVEMBRO
+       CRESCER ATRAVES DO PROCESSO
+    ==================================== */
 
     "2026-11-07": {
         title: "07 de novembro ♡",
-        message: "Escreva aqui a mensagem do dia 07."
+        message: `Quando voce nao entende o processo
+
+Texto biblico: Eclesiastes 3:11
+
+Reflexao:
+Nem tudo precisa fazer sentido agora. Existem coisas que Deus esta fazendo em voce antes de faze-las acontecer ao seu redor.
+
+Lembrete:
+Nao confunda "eu nao entendo" com "Deus nao esta fazendo".`
     },
 
     "2026-11-14": {
         title: "14 de novembro ♡",
-        message: "Escreva aqui a mensagem do dia 14."
+        message: `Quando parece que nada esta acontecendo
+
+Texto biblico: Habacuque 2:3
+
+Reflexao:
+O silencio nao significa ausencia. As vezes, Deus esta trabalhando justamente naquilo que nossos olhos ainda nao conseguem perceber.
+
+Lembrete:
+A demora de Deus nunca significa esquecimento.`
     },
 
     "2026-11-21": {
         title: "21 de novembro ♡",
-        message: "Escreva aqui a mensagem do dia 21."
+        message: `Quando estiver cansada de tentar
+
+Texto biblico: Lamentacoes 3:25-26
+
+Reflexao:
+Esperar tambem e uma forma de fe. Talvez voce nao precise resolver tudo hoje. Talvez precise apenas descansar um pouco e lembrar que Deus continua cuidando.
+
+Lembrete:
+Nem toda espera e tempo perdido.`
     },
 
     "2026-11-28": {
         title: "28 de novembro ♡",
-        message: "Escreva aqui a mensagem do dia 28."
+        message: `Quando uma porta se fechar
+
+Texto biblico: Apocalipse 3:7
+
+Reflexao:
+Nem toda porta fechada e uma perda. Algumas sao livramentos que so conseguimos compreender depois. Confie que Deus tambem esta presente naquilo que Ele nao permitiu que acontecesse.
+
+Lembrete:
+Algumas respostas de Deus vem na forma de uma porta fechada.`
     },
 
 
-    /* DEZEMBRO */
+    /* ====================================
+       DEZEMBRO
+       OLHAR PARA TRAS E RECONHECER DEUS
+    ==================================== */
 
     "2026-12-05": {
         title: "05 de dezembro ♡",
-        message: "Escreva aqui a mensagem do dia 05."
+        message: `Quando voce se sentir pequena
+
+Texto biblico: Zacarias 4:10
+
+Reflexao:
+Nao subestime aquilo que parece pequeno. Uma nova amizade, uma pequena conquista ou um dia dificil que voce conseguiu atravessar. Tudo isso tambem faz parte da construcao.
+
+Lembrete:
+Grandes historias tambem sao construidas atraves de pequenos passos.`
     },
 
     "2026-12-12": {
         title: "12 de dezembro ♡",
-        message: "Escreva aqui a mensagem do dia 12."
+        message: `Quando voce se sentir invisivel
+
+Texto biblico: 1 Samuel 16:7
+
+Reflexao:
+Voce nao precisa ser vista por todos para que sua caminhada tenha valor. Deus enxerga aquilo que ninguem ve: suas escolhas, suas renuncias, suas lutas silenciosas e a intencao do seu coracao.
+
+Lembrete:
+O que passa despercebido aos olhos humanos nunca passa despercebido aos olhos de Deus.`
     },
 
     "2026-12-19": {
         title: "19 de dezembro ♡",
-        message: "Escreva aqui a mensagem do dia 19."
+        message: `Quando precisar de coragem para recomecar
+
+Texto biblico: Ageu 2:4
+
+Reflexao:
+Recomecar pode assustar. Mas voce nao precisa ser forte porque consegue fazer tudo sozinha. Sua forca tambem pode estar em saber que Deus esta com voce enquanto voce faz a sua parte.
+
+Lembrete:
+Voce pode enfrentar um novo comeco porque nao precisa enfrenta-lo sozinha.`
     },
 
     "2026-12-26": {
         title: "26 de dezembro ♡",
-        message: "Escreva aqui a mensagem do dia 26."
+        message: `Deus pode restaurar o que parecia perdido
+
+Texto biblico: Joel 2:25
+
+Reflexao:
+Talvez existam coisas que voce gostaria que tivessem sido diferentes. Tempo perdido, oportunidades ou planos que nao aconteceram. Mas Deus nao esta limitado pelo que ficou para tras.
+
+Lembrete:
+O que passou faz parte da sua historia, mas nao precisa determinar o que Deus ainda fara.`
     }
 
 };
@@ -408,6 +553,7 @@ function isSaturdayMessage(year, month, day) {
             formatDate(year, month, day)
         ] !== undefined
     );
+
 }
 
 
