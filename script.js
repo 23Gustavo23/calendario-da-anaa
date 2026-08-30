@@ -78,7 +78,7 @@ const specialMessages = {
 
     "2026-07-24": {
         title: "24 de julho ♡",
-        message: "Parabens, Ana!!! Espero que neste ano o seu dia tenha sido completamente especial, com uma linda festa e a companhia de pessoas especiais. Que Deus te guie nos teus caminhos e, saiba que, nao importa o quao distante voce esteja, Ele sempre estara la para te proteger! E um privilegio poder contar contigo e, quando precisar, saiba que estarei por ai! Es uma guria especial e unica, entao nao deixe que o mundo ou as pessoas te mudem. Continue sendo essa pessoa incrivel que voce e. TMJ sempre! ❤️"
+        message: "Parabens, Ana!!! Espero que neste ano o seu dia tenha sido completamente especial, com uma linda festa e a companhia de pessoas especiais. Que Deus te guie nos teus caminhos e, saiba que, nao importa o quao distante voce esteja, Ele sempre estara la para te proteger! E um privilegio poder contar contigo e, quando precisar, saiba que estarei por ai! Es uma guria especial e unica, entao nao deixe que o mundo ou as pessoas te mudem. Continue sendo essa pessoa incrivel que voce e. TMJ sempre!"
     },
    
     "2026-08-29": {
