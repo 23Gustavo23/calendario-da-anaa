@@ -807,17 +807,12 @@ musicButton.addEventListener(
     "click",
     () => {
 
-        if (
-            !backgroundMusic.src
-        ) {
+        if (!backgroundMusic.currentSrc) {
 
-            alert(
-                "Coloque o arquivo musica.mp3 na pasta principal do site."
-            );
+    backgroundMusic.src = "musica.mp3";
+    backgroundMusic.load();
 
-            return;
-
-        }
+}
 
 
         if (musicPlaying) {
