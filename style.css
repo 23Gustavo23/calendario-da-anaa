@@ -600,37 +600,39 @@ body {
 
 .notes-input {
     width: 100%;
-
-    min-height: 180px;
+    min-height: 220px;
 
     resize: vertical;
 
     border: none;
-
     outline: none;
 
-    padding: 18px;
+    padding: 8px 18px 8px 18px;
 
     background:
         repeating-linear-gradient(
-            transparent,
+            to bottom,
+            transparent 0,
             transparent 31px,
+            #eadfd2 31px,
             #eadfd2 32px
         );
+
+    background-position: 0 8px;
 
     color: var(--text);
 
     font-family: "Caveat", cursive;
-
-    font-size: 20px;
+    font-size: 21px;
 
     line-height: 32px;
+
+    overflow-y: auto;
 }
 
 .notes-input::placeholder {
     color: #c4b6aa;
 }
-
 .notes-footer {
     display: flex;
 
