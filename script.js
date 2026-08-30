@@ -375,7 +375,7 @@ const photos = {
 
     "2026-01-18": [
         "fotos/3.jpg",
-        "fotos/3.1.jpg"
+        "fotos/3.3.jpg"
     ],
 
     "2026-01-19": "fotos/4.jpg",
@@ -390,7 +390,7 @@ const photos = {
 
     "2026-01-24": [
         "fotos/9.jpg",
-        "fotos/9.1.jpg"
+        "fotos/9.9.jpg"
     ],
 
     "2026-01-25": "fotos/10.jpg"
