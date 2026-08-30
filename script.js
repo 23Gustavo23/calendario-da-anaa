@@ -113,13 +113,15 @@ const saturdayMessages = {
 
     "2026-09-05": {
         title: "05 de setembro ♡",
-        message: "Ir sem saber tudo
+        message: `Ir sem saber tudo
 
 Texto biblico: Hebreus 11:8
+
 Reflexao:
 Abraao partiu sem saber para onde estava indo. Voce tambem nao precisa conhecer todos os detalhes do caminho para dar o primeiro passo. Talvez esteja indo para longe de tudo que conhece, mas nao esta indo para longe de Deus. Ele nao precisa te mostrar o caminho inteiro. Basta confiar que Ele estara presente em cada parte dele.
+
 Lembrete:
-Voce nao precisa saber tudo sobre o amanha para confiar nAquele que ja esta la."
+Voce nao precisa saber tudo sobre o amanha para confiar nAquele que ja esta la.`
     },
 
     "2026-09-12": {
@@ -220,39 +222,39 @@ Voce nao precisa saber tudo sobre o amanha para confiar nAquele que ja esta la."
 
 const photos = {
 
-    "2026-01-15": "0.jpg",
+    "2026-01-15": "fotos/0.jpg",
 
-    "2026-01-16": "1.jpg",
+    "2026-01-16": "fotos/1.jpg",
 
-    "2026-01-17": "2.jpg",
+    "2026-01-17": "fotos/2.jpg",
 
     "2026-01-18": [
-        "3.jpg",
-        "3.3.jpg"
+        "fotos/3.jpg",
+        "fotos/3.1.jpg"
     ],
 
-    "2026-01-19": "4.jpg",
+    "2026-01-19": "fotos/4.jpg",
 
-    "2026-01-20": "5.jpg",
+    "2026-01-20": "fotos/5.jpg",
 
-    "2026-01-21": "6.jpg",
+    "2026-01-21": "fotos/6.jpg",
 
-    "2026-01-22": "7.jpg",
+    "2026-01-22": "fotos/7.jpg",
 
-    "2026-01-23": "8.jpg",
+    "2026-01-23": "fotos/8.jpg",
 
     "2026-01-24": [
-        "9.jpg",
-        "9.9.jpg"
+        "fotos/9.jpg",
+        "fotos/9.1.jpg"
     ],
 
-    "2026-01-25": "10.jpg"
+    "2026-01-25": "fotos/10.jpg"
 
 };
 
 
 /* ========================================
-   VARIÁVEIS DO CALENDÁRIO
+   VARIÁVEIS
 ======================================== */
 
 let currentMonth = 0;
@@ -305,13 +307,8 @@ const modalTitle =
 const modalContent =
     document.getElementById("modalContent");
 
-const modalPhoto =
-    document.getElementById("modalPhoto");
-
 const modalPhotoContainer =
-    document.getElementById(
-        "modalPhotoContainer"
-    );
+    document.getElementById("modalPhotoContainer");
 
 const musicButton =
     document.getElementById("musicButton");
@@ -345,13 +342,9 @@ calendarTab.addEventListener(
 
         routeTab.classList.remove("active");
 
-        calendarPage.classList.remove(
-            "hidden-page"
-        );
+        calendarPage.classList.remove("hidden-page");
 
-        routePage.classList.add(
-            "hidden-page"
-        );
+        routePage.classList.add("hidden-page");
 
         window.scrollTo({
             top: 0,
@@ -370,13 +363,9 @@ routeTab.addEventListener(
 
         calendarTab.classList.remove("active");
 
-        routePage.classList.remove(
-            "hidden-page"
-        );
+        routePage.classList.remove("hidden-page");
 
-        calendarPage.classList.add(
-            "hidden-page"
-        );
+        calendarPage.classList.add("hidden-page");
 
         window.scrollTo({
             top: 0,
@@ -391,49 +380,34 @@ routeTab.addEventListener(
    FORMATO DE DATA
 ======================================== */
 
-function formatDate(
-    year,
-    month,
-    day
-) {
+function formatDate(year, month, day) {
 
     const monthString =
-        String(month + 1)
-            .padStart(2, "0");
+        String(month + 1).padStart(2, "0");
 
     const dayString =
-        String(day)
-            .padStart(2, "0");
+        String(day).padStart(2, "0");
 
     return `${year}-${monthString}-${dayString}`;
 }
 
 
 /* ========================================
-   SÁBADOS A PARTIR DE SETEMBRO
+   VERIFICAR SÁBADO
 ======================================== */
 
-function isSaturdayMessage(
-    year,
-    month,
-    day
-) {
+function isSaturdayMessage(year, month, day) {
 
     const date =
-        new Date(
-            year,
-            month,
-            day
-        );
+        new Date(year, month, day);
 
-    const saturday =
-        date.getDay() === 6;
-
-    const fromSeptember =
-        month >= 8;
-
-    return saturday &&
-           fromSeptember;
+    return (
+        date.getDay() === 6 &&
+        month >= 8 &&
+        saturdayMessages[
+            formatDate(year, month, day)
+        ] !== undefined
+    );
 }
 
 
@@ -475,6 +449,8 @@ function renderCalendar() {
         ).getDate();
 
 
+    /* ESPAÇOS */
+
     for (
         let i = 0;
         i < firstDay;
@@ -496,6 +472,8 @@ function renderCalendar() {
     }
 
 
+    /* DIAS */
+
     for (
         let day = 1;
         day <= daysInMonth;
@@ -505,9 +483,7 @@ function renderCalendar() {
         const dayElement =
             document.createElement("div");
 
-        dayElement.classList.add(
-            "day"
-        );
+        dayElement.classList.add("day");
 
         dayElement.textContent =
             day;
@@ -551,9 +527,7 @@ function renderCalendar() {
         }
 
 
-        if (
-            hasSaturdayMessage
-        ) {
+        if (hasSaturdayMessage) {
 
             dayElement.classList.add(
                 "saturday-message"
@@ -579,9 +553,7 @@ function renderCalendar() {
 
             dayElement.addEventListener(
                 "click",
-                () => openMessage(
-                    dateKey
-                )
+                () => openMessage(dateKey)
             );
 
         }
@@ -630,9 +602,7 @@ function openMessage(dateKey) {
         `${day} de ${months[month]} de ${year}`;
 
 
-    /* ====================================
-       MENSAGEM
-    ==================================== */
+    /* MENSAGEM */
 
     if (message) {
 
@@ -665,9 +635,7 @@ function openMessage(dateKey) {
     }
 
 
-    /* ====================================
-       FOTOS
-    ==================================== */
+    /* FOTOS */
 
     modalPhotoContainer.innerHTML = "";
 
@@ -719,10 +687,6 @@ function openMessage(dateKey) {
     }
 
 
-    /* ====================================
-       MOSTRAR MODAL
-    ==================================== */
-
     messageModal.classList.remove(
         "hidden"
     );
@@ -749,21 +713,24 @@ closeModal.addEventListener(
 );
 
 
-document
-    .querySelector(".modal-overlay")
-    .addEventListener(
+const modalOverlay =
+    document.querySelector(".modal-overlay");
+
+if (modalOverlay) {
+
+    modalOverlay.addEventListener(
         "click",
         closeMessage
     );
+
+}
 
 
 document.addEventListener(
     "keydown",
     (event) => {
 
-        if (
-            event.key === "Escape"
-        ) {
+        if (event.key === "Escape") {
 
             closeMessage();
 
@@ -781,12 +748,8 @@ previousMonth.addEventListener(
     "click",
     () => {
 
-        if (
-            currentMonth === 0
-        ) {
-
+        if (currentMonth === 0) {
             return;
-
         }
 
         currentMonth--;
@@ -803,12 +766,8 @@ nextMonth.addEventListener(
     "click",
     () => {
 
-        if (
-            currentMonth === 11
-        ) {
-
+        if (currentMonth === 11) {
             return;
-
         }
 
         currentMonth++;
@@ -838,11 +797,10 @@ startButton.addEventListener(
         );
 
 
-        /* ================================
-           MÚSICA
-        ================================= */
+        /* MÚSICA */
 
         if (
+            !backgroundMusic.src ||
             !backgroundMusic.currentSrc
         ) {
 
@@ -858,18 +816,18 @@ startButton.addEventListener(
             .play()
             .then(() => {
 
-                musicPlaying =
-                    true;
+                musicPlaying = true;
 
                 musicButton.classList.add(
                     "playing"
                 );
 
             })
-            .catch(() => {
+            .catch((error) => {
 
                 console.log(
-                    "A música não pôde iniciar."
+                    "A música não pôde iniciar:",
+                    error
                 );
 
             });
@@ -887,6 +845,7 @@ musicButton.addEventListener(
     () => {
 
         if (
+            !backgroundMusic.src ||
             !backgroundMusic.currentSrc
         ) {
 
@@ -902,15 +861,11 @@ musicButton.addEventListener(
 
             backgroundMusic.pause();
 
-            musicPlaying =
-                false;
+            musicPlaying = false;
 
             musicButton.classList.remove(
                 "playing"
             );
-
-            musicButton.textContent =
-                "♫";
 
         }
 
@@ -920,22 +875,22 @@ musicButton.addEventListener(
                 .play()
                 .then(() => {
 
-                    musicPlaying =
-                        true;
+                    musicPlaying = true;
 
                     musicButton.classList.add(
                         "playing"
                     );
 
-                    musicButton.textContent =
-                        "♫";
-
                 })
                 .catch((error) => {
 
                     console.error(
-                        "Erro ao tocar a música:",
+                        "Erro ao tocar música:",
                         error
+                    );
+
+                    alert(
+                        "Não consegui tocar a música. Verifique se o arquivo musica.mp3 está na pasta principal do site."
                     );
 
                 });
@@ -952,39 +907,41 @@ musicButton.addEventListener(
 ======================================== */
 
 const notesInput =
-    document.getElementById(
-        "notesInput"
-    );
+    document.getElementById("notesInput");
 
 const saveNotes =
-    document.getElementById(
-        "saveNotes"
-    );
+    document.getElementById("saveNotes");
 
 const saveMessage =
-    document.getElementById(
-        "saveMessage"
-    );
+    document.getElementById("saveMessage");
 
 
 /* ========================================
-   CHAVE DAS ANOTAÇÕES
+   CHAVE DAS NOTAS
 ======================================== */
 
 function getNotesKey() {
 
-    return `calendarNotes-${currentYear}-${String(
-        currentMonth + 1
-    ).padStart(2, "0")}`;
+    return (
+        "calendarNotes-" +
+        currentYear +
+        "-" +
+        String(currentMonth + 1).padStart(2, "0")
+    );
 
 }
 
 
 /* ========================================
-   CARREGAR NOTAS DO MÊS
+   CARREGAR NOTAS
 ======================================== */
 
 function loadNotesForCurrentMonth() {
+
+    if (!notesInput) {
+        return;
+    }
+
 
     const savedNotes =
         localStorage.getItem(
@@ -996,42 +953,54 @@ function loadNotesForCurrentMonth() {
         savedNotes || "";
 
 
-    saveMessage.textContent =
-        "suas anotações ficam salvas neste navegador";
+    if (saveMessage) {
+
+        saveMessage.textContent =
+            "suas anotações ficam salvas neste navegador";
+
+    }
 
 }
 
 
 /* ========================================
-   SALVAR NOTAS DO MÊS
+   SALVAR NOTAS
 ======================================== */
 
-saveNotes.addEventListener(
-    "click",
-    () => {
+if (saveNotes) {
 
-        localStorage.setItem(
-            getNotesKey(),
-            notesInput.value
-        );
+    saveNotes.addEventListener(
+        "click",
+        () => {
 
-
-        saveMessage.textContent =
-            "✓ anotação salva!";
+            localStorage.setItem(
+                getNotesKey(),
+                notesInput.value
+            );
 
 
-        setTimeout(
-            () => {
+            if (saveMessage) {
 
                 saveMessage.textContent =
-                    "suas anotações ficam salvas neste navegador";
+                    "✓ anotação salva!";
 
-            },
-            2500
-        );
 
-    }
-);
+                setTimeout(
+                    () => {
+
+                        saveMessage.textContent =
+                            "suas anotações ficam salvas neste navegador";
+
+                    },
+                    2500
+                );
+
+            }
+
+        }
+    );
+
+}
 
 
 /* ========================================
