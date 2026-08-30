@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
 
     <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+        content="width=device-width, initial-scale=1.0">
 
     <title>Um pequeno presente ♡</title>
 
@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap"
-          rel="stylesheet">
+        rel="stylesheet">
 </head>
 
 <body>
@@ -30,9 +30,13 @@
 
             <div class="little-flower">✿</div>
 
-            <p class="small-title">um pequeno presente</p>
+            <p class="small-title">
+                um pequeno presente
+            </p>
 
-            <h1>Para você ♡</h1>
+            <h1>
+                Para você ♡
+            </h1>
 
             <p class="welcome-text">
                 Um ano inteiro guardando<br>
@@ -58,136 +62,707 @@
 
     <main id="mainSite" class="main-site hidden">
 
-        <header class="header">
+        <!-- NAVEGAÇÃO -->
 
-            <div class="header-decoration">✿</div>
+        <nav class="navigation">
 
-            <p>um ano inteiro...</p>
+            <button
+                id="calendarTab"
+                class="nav-button active">
 
-            <h1>para você ♡</h1>
+                📅 Calendário
 
-            <div class="header-decoration">✿</div>
+            </button>
 
-        </header>
+            <button
+                id="routeTab"
+                class="nav-button">
+
+                🗺️ Roteiro
+
+            </button>
+
+        </nav>
 
 
-        <!-- CONTROLES DO CALENDÁRIO -->
+        <!-- ==================================================
+             ABA DO CALENDÁRIO
+        =================================================== -->
 
-        <section class="calendar-container">
+        <section id="calendarPage" class="page active-page">
 
-            <div class="calendar-top">
+            <header class="header">
 
-                <button id="previousMonth" class="month-button">
-                    ‹
-                </button>
-
-                <div>
-                    <h2 id="monthName">Janeiro</h2>
-                    <span id="yearNumber">2026</span>
+                <div class="header-decoration">
+                    ✿
                 </div>
 
-                <button id="nextMonth" class="month-button">
-                    ›
-                </button>
+                <p>
+                    um ano inteiro...
+                </p>
 
-            </div>
+                <h1>
+                    para você ♡
+                </h1>
 
+                <div class="header-decoration">
+                    ✿
+                </div>
 
-            <!-- DIAS DA SEMANA -->
-
-            <div class="weekdays">
-
-                <span>dom</span>
-                <span>seg</span>
-                <span>ter</span>
-                <span>qua</span>
-                <span>qui</span>
-                <span>sex</span>
-                <span>sáb</span>
-
-            </div>
+            </header>
 
 
-            <!-- DIAS -->
+            <!-- CALENDÁRIO -->
 
-            <div id="calendarDays" class="calendar-days"></div>
+            <section class="calendar-container">
+
+                <div class="calendar-top">
+
+                    <button
+                        id="previousMonth"
+                        class="month-button">
+
+                        ‹
+
+                    </button>
+
+                    <div>
+
+                        <h2 id="monthName">
+                            Janeiro
+                        </h2>
+
+                        <span id="yearNumber">
+                            2026
+                        </span>
+
+                    </div>
+
+                    <button
+                        id="nextMonth"
+                        class="month-button">
+
+                        ›
+
+                    </button>
+
+                </div>
+
+
+                <div class="weekdays">
+
+                    <span>dom</span>
+                    <span>seg</span>
+                    <span>ter</span>
+                    <span>qua</span>
+                    <span>qui</span>
+                    <span>sex</span>
+                    <span>sáb</span>
+
+                </div>
+
+
+                <div
+                    id="calendarDays"
+                    class="calendar-days">
+                </div>
+
+            </section>
+
+
+            <!-- FRASE -->
+
+            <section class="bottom-message">
+
+                <span>✿</span>
+
+                <p>
+                    algumas datas guardam<br>
+                    pequenas surpresas...
+                </p>
+
+                <span>✿</span>
+
+            </section>
+
+
+            <!-- =========================
+                 CANTINHO DE ANOTAÇÕES
+            ========================== -->
+
+            <section class="notes-section">
+
+                <div class="notes-header">
+
+                    <span>✎</span>
+
+                    <div>
+
+                        <h2>
+                            meu cantinho
+                        </h2>
+
+                        <p>
+                            algumas coisas que quero guardar
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <textarea
+                    id="notesInput"
+                    class="notes-input"
+                    placeholder="Escreva alguma coisa aqui...">
+                </textarea>
+
+
+                <div class="notes-footer">
+
+                    <span id="saveMessage">
+                        suas anotações ficam salvas neste navegador
+                    </span>
+
+                    <button
+                        id="saveNotes"
+                        class="save-button">
+
+                        salvar ♡
+
+                    </button>
+
+                </div>
+
+            </section>
 
         </section>
 
 
-        <!-- FRASE ABAIXO DO CALENDÁRIO -->
+        <!-- ==================================================
+             ABA DO ROTEIRO
+        =================================================== -->
 
-        <section class="bottom-message">
+        <section
+            id="routePage"
+            class="page hidden-page">
 
-            <span>✿</span>
+            <header class="route-header">
 
-            <p>
-                algumas datas guardam<br>
-                pequenas surpresas...
-            </p>
+                <div class="route-icon">
+                    🗺️
+                </div>
 
-            <span>✿</span>
+                <p>
+                    lugares para conhecer
+                </p>
+
+                <h1>
+                    Um pequeno roteiro 🌿
+                </h1>
+
+                <div class="route-introduction">
+
+                    <p>
+                        Alguns lugares legais para conhecer
+                        durante o tempo no UNIAENE e pela região
+                        do Recôncavo Baiano.
+                    </p>
+
+                    <span>
+                        📍 Cachoeira • São Félix • Saubara
+                    </span>
+
+                </div>
+
+            </header>
+
+
+            <!-- LOCALIZAÇÃO DO UNIAENE -->
+
+            <section class="location-card">
+
+                <div class="location-icon">
+                    📍
+                </div>
+
+                <div>
+
+                    <h2>
+                        Ponto de partida
+                    </h2>
+
+                    <p>
+                        <strong>UNIAENE</strong>
+                    </p>
+
+                    <p>
+                        BR-101, km 197,
+                        Estrada de Capoeiruçu,
+                        Cachoeira – BA
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 LUGARES
+            ========================== -->
+
+            <section class="places-container">
+
+
+                <!-- CASA DE CÂMARA -->
+
+                <article class="place-card">
+
+                    <div class="place-number">
+                        01
+                    </div>
+
+                    <div class="place-content">
+
+                        <div class="place-icon">
+                            📜
+                        </div>
+
+                        <p class="place-category">
+                            Museu histórico · ⭐ 4,5
+                        </p>
+
+                        <h2>
+                            Casa de Câmara e
+                            Cadeia de Cachoeira
+                        </h2>
+
+                        <p class="place-description">
+                            Um dos pontos centrais do conjunto
+                            histórico de Cachoeira, localizado
+                            no entorno da Praça da Aclamação.
+                        </p>
+
+                        <div class="place-details">
+
+                            <strong>
+                                O que conhecer
+                            </strong>
+
+                            <ul>
+
+                                <li>
+                                    Arquitetura colonial preservada.
+                                </li>
+
+                                <li>
+                                    Casarões históricos ao redor
+                                    da praça.
+                                </li>
+
+                                <li>
+                                    Restaurantes e opções de
+                                    gastronomia local nas proximidades.
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                        <div class="place-tip">
+                            📌 Ideal para conhecer um pouco
+                            da história de Cachoeira e
+                            passear durante o dia.
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- CARMO -->
+
+                <article class="place-card">
+
+                    <div class="place-number">
+                        02
+                    </div>
+
+                    <div class="place-content">
+
+                        <div class="place-icon">
+                            🏛️
+                        </div>
+
+                        <p class="place-category">
+                            Marco histórico · ⭐ 4,6
+                        </p>
+
+                        <h2>
+                            Igreja e Casa de Oração
+                            da Venerável Ordem
+                            Terceira do Carmo
+                        </h2>
+
+                        <p class="place-description">
+                            Um importante conjunto arquitetônico
+                            no centro de Cachoeira, tombado pelo IPHAN.
+                        </p>
+
+                        <div class="place-details">
+
+                            <strong>
+                                O que conhecer
+                            </strong>
+
+                            <ul>
+
+                                <li>
+                                    Detalhes barrocos.
+                                </li>
+
+                                <li>
+                                    Azulejos portugueses.
+                                </li>
+
+                                <li>
+                                    Ambiente tranquilo para uma
+                                    visita durante o dia.
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                        <div class="place-tip">
+                            📌 Ideal para quem gosta de história,
+                            arquitetura e cultura.
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PONTE -->
+
+                <article class="place-card">
+
+                    <div class="place-number">
+                        03
+                    </div>
+
+                    <div class="place-content">
+
+                        <div class="place-icon">
+                            🌉
+                        </div>
+
+                        <p class="place-category">
+                            Ponte · ⭐ 4,6
+                        </p>
+
+                        <h2>
+                            Ponte Dom Pedro II
+                        </h2>
+
+                        <p class="place-description">
+                            Inaugurada em 1885, atravessa o
+                            Rio Paraguaçu e conecta Cachoeira
+                            a São Félix.
+                        </p>
+
+                        <div class="place-details">
+
+                            <strong>
+                                O que conhecer
+                            </strong>
+
+                            <ul>
+
+                                <li>
+                                    Passagem para pedestres.
+                                </li>
+
+                                <li>
+                                    Vista do Rio Paraguaçu.
+                                </li>
+
+                                <li>
+                                    Vista das duas cidades.
+                                </li>
+
+                                <li>
+                                    Região movimentada durante o dia.
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                        <div class="place-tip">
+                            📌 Ideal para uma caminhada e
+                            algumas fotos.
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- CASA DA CULTURA -->
+
+                <article class="place-card">
+
+                    <div class="place-number">
+                        04
+                    </div>
+
+                    <div class="place-content">
+
+                        <div class="place-icon">
+                            🖼️
+                        </div>
+
+                        <p class="place-category">
+                            Centro cultural · ⭐ 3,0
+                        </p>
+
+                        <h2>
+                            Casa da Cultura
+                            Américo Simas
+                        </h2>
+
+                        <p class="place-description">
+                            Localizada em São Félix, do outro
+                            lado do rio, com exposições e
+                            acervos relacionados à história
+                            e à cultura do Recôncavo.
+                        </p>
+
+                        <div class="place-details">
+
+                            <strong>
+                                O que conhecer
+                            </strong>
+
+                            <ul>
+
+                                <li>
+                                    Exposições.
+                                </li>
+
+                                <li>
+                                    Acervo histórico.
+                                </li>
+
+                                <li>
+                                    Ambiente tranquilo.
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                        <div class="place-tip">
+                            📌 Ideal para continuar o passeio
+                            depois de atravessar a ponte.
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- CABUÇU -->
+
+                <article class="place-card">
+
+                    <div class="place-number">
+                        05
+                    </div>
+
+                    <div class="place-content">
+
+                        <div class="place-icon">
+                            🌊
+                        </div>
+
+                        <p class="place-category">
+                            Praia · ⭐ 4,4
+                        </p>
+
+                        <h2>
+                            Praia de Cabuçu
+                        </h2>
+
+                        <p class="place-description">
+                            Uma opção para um passeio de fim
+                            de semana, localizada no distrito
+                            de Cabuçu, em Saubara.
+                        </p>
+
+                        <div class="place-details">
+
+                            <strong>
+                                O que encontrar
+                            </strong>
+
+                            <ul>
+
+                                <li>
+                                    Mar calmo e morno.
+                                </li>
+
+                                <li>
+                                    Quiosques.
+                                </li>
+
+                                <li>
+                                    Ambiente familiar.
+                                </li>
+
+                                <li>
+                                    Boa opção para relaxar e nadar.
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                        <div class="place-tip">
+                            📌 Ideal para passar um dia
+                            diferente fora da rotina da faculdade.
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+
+            <!-- FINAL DO ROTEIRO -->
+
+            <section class="route-ending">
+
+                <span>✿</span>
+
+                <h2>
+                    E ainda tem muito lugar
+                    para conhecer...
+                </h2>
+
+                <p>
+                    Esse roteiro pode ganhar novos destinos
+                    ao longo do tempo.
+                </p>
+
+                <span>✿</span>
+
+            </section>
+
+
+            <!-- SEGURANÇA -->
+
+            <section class="safety-note">
+
+                <h3>
+                    🌿 Uma dica para os passeios
+                </h3>
+
+                <p>
+                    Para os passeios pela região, prefira o
+                    período diurno, mantenha seus pertences
+                    bem guardados em locais movimentados e,
+                    sempre que possível, faça os passeios
+                    em dupla ou grupo.
+                </p>
+
+            </section>
 
         </section>
 
 
-        <!-- CONTROLE DE MÚSICA -->
+        <!-- BOTÃO DE MÚSICA -->
 
-        <button id="musicButton" class="music-button" title="Música">
+        <button
+            id="musicButton"
+            class="music-button"
+            title="Música">
 
             ♫
 
         </button>
 
-        <!--
-            Coloque aqui um arquivo de áudio que você tenha
-            autorização para usar.
 
-            Exemplo:
+        <!-- ÁUDIO -->
 
-            <audio id="backgroundMusic" loop>
-                <source src="musica.mp3" type="audio/mpeg">
-            </audio>
-        -->
+        <audio
+            id="backgroundMusic"
+            loop>
 
-        <audio id="backgroundMusic" loop></audio>
+            <source
+                src="musica.mp3"
+                type="audio/mpeg">
+
+        </audio>
 
     </main>
 
 
-    <!-- =========================
+    <!-- ==================================================
          MODAL DAS MENSAGENS
-    ========================== -->
+    =================================================== -->
 
-    <div id="messageModal" class="modal hidden">
+    <div
+        id="messageModal"
+        class="modal hidden">
 
         <div class="modal-overlay"></div>
 
         <div class="message-card">
 
-            <button id="closeModal" class="close-button">
+            <button
+                id="closeModal"
+                class="close-button">
+
                 ×
+
             </button>
 
             <div class="card-flower">
                 ✿
             </div>
 
-            <p id="modalDate" class="modal-date">
+            <p
+                id="modalDate"
+                class="modal-date">
+
                 10 de janeiro
+
             </p>
 
             <h2 id="modalTitle">
-                Uma pequena mensagem ♡
+                Uma pequena mensagem
             </h2>
 
-            <div id="modalContent" class="modal-content">
+            <div
+                id="modalContent"
+                class="modal-content">
+
                 Sua mensagem aparecerá aqui.
+
             </div>
 
-            <div id="modalPhotoContainer" class="modal-photo-container hidden">
+            <div
+                id="modalPhotoContainer"
+                class="modal-photo-container hidden">
 
-                <img id="modalPhoto" src="" alt="Foto especial">
+                <img
+                    id="modalPhoto"
+                    src=""
+                    alt="Foto especial">
 
             </div>
 
@@ -199,10 +774,6 @@
 
     </div>
 
-
-    <!-- =========================
-         JAVASCRIPT
-    ========================== -->
 
     <script src="script.js"></script>
 
