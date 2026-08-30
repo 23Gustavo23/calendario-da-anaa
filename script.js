@@ -26,81 +26,80 @@ const specialMessages = {
 
     "2026-01-15": {
         title: "15 de janeiro ♡",
-        message: "Sua mensagem aqui..."
+        message: "Onde tudo começou"
     },
 
     "2026-01-16": {
         title: "16 de janeiro ♡",
-        message: "Sua mensagem aqui..."
+        message: "Escreva aqui a mensagem do dia 16."
     },
 
     "2026-01-17": {
         title: "17 de janeiro ♡",
-        message: "Sua mensagem aqui..."
+        message: "Escreva aqui a mensagem do dia 17."
     },
 
     "2026-01-18": {
         title: "18 de janeiro ♡",
-        message: "Sua mensagem aqui..."
+        message: "Escreva aqui a mensagem do dia 18."
     },
 
     "2026-01-19": {
         title: "19 de janeiro ♡",
-        message: "Sua mensagem aqui..."
+        message: "Escreva aqui a mensagem do dia 19."
     },
 
     "2026-01-20": {
         title: "20 de janeiro ♡",
-        message: "Sua mensagem aqui..."
+        message: "Escreva aqui a mensagem do dia 20."
     },
 
     "2026-01-21": {
         title: "21 de janeiro ♡",
-        message: "Sua mensagem aqui..."
+        message: "Escreva aqui a mensagem do dia 21."
     },
 
     "2026-01-22": {
         title: "22 de janeiro ♡",
-        message: "Sua mensagem aqui..."
+        message: "Escreva aqui a mensagem do dia 22."
     },
 
     "2026-01-23": {
         title: "23 de janeiro ♡",
-        message: "Sua mensagem aqui..."
+        message: "Escreva aqui a mensagem do dia 23."
     },
 
     "2026-01-24": {
         title: "24 de janeiro ♡",
-        message: "Sua mensagem aqui..."
+        message: "Escreva aqui a mensagem do dia 24."
     },
 
     "2026-01-25": {
         title: "25 de janeiro ♡",
-        message: "Sua mensagem aqui..."
+        message: "Escreva aqui a mensagem do dia 25."
     },
 
     "2026-05-06": {
         title: "06 de maio ♡",
-        message: "Sua mensagem especial aqui..."
+        message: "Escreva aqui a mensagem especial."
     },
 
     "2026-07-24": {
         title: "24 de julho ♡",
-        message: "Sua mensagem especial aqui..."
+        message: "Escreva aqui a mensagem especial."
     },
 
     "2026-08-29": {
         title: "29 de agosto ♡",
-        message: "Uma mensagem especial para este dia..."
+        message: "Escreva aqui a mensagem especial."
     },
 
     "2026-12-31": {
         title: "31 de dezembro ✨",
-        message: "Uma mensagem especial para encerrar 2026..."
+        message: "Escreva aqui a mensagem especial para encerrar 2026."
     }
 
 };
-
 
 /* ========================================
    FOTOS
@@ -108,14 +107,35 @@ const specialMessages = {
 
 const photos = {
 
-    // Exemplo:
-    //
-    // "2026-08-29": "fotos/foto01.jpg",
-    //
-    // "2026-12-31": "fotos/foto02.jpg"
+    "2026-01-15": "fotos/0.jpg",
+
+    "2026-01-16": "fotos/1.jpg",
+
+    "2026-01-17": "fotos/2.jpg",
+
+    "2026-01-18": [
+        "fotos/3.jpg",
+        "fotos/3.1.jpg"
+    ],
+
+    "2026-01-19": "fotos/4.jpg",
+
+    "2026-01-20": "fotos/5.jpg",
+
+    "2026-01-21": "fotos/6.jpg",
+
+    "2026-01-22": "fotos/7.jpg",
+
+    "2026-01-23": "fotos/8.jpg",
+
+    "2026-01-24": [
+        "fotos/9.jpg",
+        "fotos/9.1.jpg"
+    ],
+
+    "2026-01-25": "fotos/10.jpg"
 
 };
-
 
 /* ========================================
    VARIÁVEIS DO CALENDÁRIO
@@ -507,29 +527,16 @@ function renderCalendar() {
    ABRIR MENSAGEM
 ======================================== */
 
-function openMessage(
-    dateKey
-) {
+function openMessage(dateKey) {
 
-    const message =
-        specialMessages[dateKey];
+    const message = specialMessages[dateKey];
+    const photo = photos[dateKey];
 
-    const photo =
-        photos[dateKey];
+    const parts = dateKey.split("-");
 
-
-    const parts =
-        dateKey.split("-");
-
-
-    const year =
-        Number(parts[0]);
-
-    const month =
-        Number(parts[1]) - 1;
-
-    const day =
-        Number(parts[2]);
+    const year = Number(parts[0]);
+    const month = Number(parts[1]) - 1;
+    const day = Number(parts[2]);
 
 
     /*
@@ -554,6 +561,81 @@ function openMessage(
 
     }
 
+    else {
+
+        modalTitle.textContent =
+            "Uma mensagem para você";
+
+        modalContent.textContent =
+            "Aqui vai uma frase especial para este dia...";
+
+    }
+
+
+    /*
+        FOTOS
+    */
+
+    modalPhotoContainer.innerHTML = "";
+
+
+    if (photo) {
+
+        modalPhotoContainer.classList.remove(
+            "hidden"
+        );
+
+
+        const photoList =
+            Array.isArray(photo)
+                ? photo
+                : [photo];
+
+
+        photoList.forEach(
+            (photoPath) => {
+
+                const image =
+                    document.createElement("img");
+
+                image.src = photoPath;
+
+                image.alt =
+                    "Foto especial";
+
+
+                image.classList.add(
+                    "modal-gallery-photo"
+                );
+
+
+                modalPhotoContainer.appendChild(
+                    image
+                );
+
+            }
+        );
+
+    }
+
+    else {
+
+        modalPhotoContainer.classList.add(
+            "hidden"
+        );
+
+    }
+
+
+    /*
+        MOSTRAR MODAL
+    */
+
+    messageModal.classList.remove(
+        "hidden"
+    );
+
+}
     else {
 
         modalTitle.textContent =
