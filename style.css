@@ -1,7 +1,3 @@
-/* ========================================
-   CONFIGURAÇÕES GERAIS
-======================================== */
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -9,15 +5,23 @@
 }
 
 :root {
-    --background: #fff8f8;
-    --background-soft: #fff1f3;
+    --background: #fff9f7;
+    --background-soft: #fff1ed;
+
     --pink: #d98f9d;
     --pink-dark: #b96d7b;
-    --pink-light: #f6dce1;
-    --text: #67565a;
-    --text-light: #9b8589;
+    --pink-light: #f7dfe3;
+
+    --green: #829b87;
+    --green-dark: #637c69;
+    --green-light: #e8f0e8;
+
+    --text: #62575a;
+    --text-light: #97898d;
+
     --white: #ffffff;
-    --shadow: rgba(180, 120, 130, 0.15);
+
+    --shadow: rgba(120, 90, 90, 0.13);
 }
 
 html {
@@ -61,7 +65,7 @@ body {
         ),
         radial-gradient(
             circle at 80% 80%,
-            rgba(246, 220, 225, 0.7),
+            rgba(232, 240, 232, 0.8),
             transparent 30%
         ),
         var(--background);
@@ -145,19 +149,13 @@ body {
     box-shadow:
         0 10px 25px var(--shadow);
 
-    transition:
-        transform 0.3s ease,
-        background 0.3s ease,
-        box-shadow 0.3s ease;
+    transition: 0.3s ease;
 }
 
 .main-button:hover {
     transform: translateY(-3px);
 
     background: var(--pink-dark);
-
-    box-shadow:
-        0 15px 30px var(--shadow);
 }
 
 .music-hint {
@@ -176,14 +174,90 @@ body {
 .main-site {
     min-height: 100vh;
 
-    padding: 50px 20px 100px;
-
-    opacity: 1;
+    padding: 25px 20px 100px;
 
     transition: opacity 1s ease;
 }
 
 .main-site.hidden {
+    display: none;
+}
+
+
+/* ========================================
+   NAVEGAÇÃO
+======================================== */
+
+.navigation {
+    width: min(650px, 100%);
+
+    margin: 0 auto 35px;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 6px;
+
+    background: rgba(255, 255, 255, 0.8);
+
+    border: 1px solid #f0dfe0;
+
+    border-radius: 50px;
+
+    box-shadow:
+        0 8px 25px var(--shadow);
+}
+
+.nav-button {
+    flex: 1;
+
+    border: none;
+
+    padding: 11px 18px;
+
+    border-radius: 30px;
+
+    background: transparent;
+
+    color: var(--text-light);
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.nav-button:hover {
+    background: var(--background-soft);
+}
+
+.nav-button.active {
+    background: var(--pink);
+
+    color: white;
+
+    box-shadow:
+        0 5px 15px var(--shadow);
+}
+
+
+/* ========================================
+   PÁGINAS
+======================================== */
+
+.page {
+    width: 100%;
+}
+
+.hidden-page {
     display: none;
 }
 
@@ -242,7 +316,7 @@ body {
 
     padding: 30px;
 
-    background: rgba(255, 255, 255, 0.75);
+    background: rgba(255, 255, 255, 0.78);
 
     border: 1px solid #f4dfe2;
 
@@ -251,11 +325,6 @@ body {
     box-shadow:
         0 20px 60px var(--shadow);
 }
-
-
-/* ========================================
-   TOPO DO CALENDÁRIO
-======================================== */
 
 .calendar-top {
     display: flex;
@@ -306,16 +375,17 @@ body {
     transition: 0.3s ease;
 }
 
-.month-button:hover {
+.month-button:hover:not(:disabled) {
     background: var(--pink-light);
 
     transform: scale(1.08);
 }
 
+.month-button:disabled {
+    opacity: 0.3;
 
-/* ========================================
-   DIAS DA SEMANA
-======================================== */
+    cursor: default;
+}
 
 .weekdays {
     display: grid;
@@ -334,11 +404,6 @@ body {
 
     text-transform: uppercase;
 }
-
-
-/* ========================================
-   DIAS
-======================================== */
 
 .calendar-days {
     display: grid;
@@ -366,9 +431,7 @@ body {
 
     color: var(--text);
 
-    transition:
-        transform 0.25s ease,
-        background 0.25s ease;
+    transition: 0.25s ease;
 }
 
 .day.empty {
@@ -458,6 +521,481 @@ body {
 
 
 /* ========================================
+   CANTINHO DE ANOTAÇÕES
+======================================== */
+
+.notes-section {
+    width: min(650px, 100%);
+
+    margin: 40px auto 0;
+
+    padding: 28px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fffefb,
+            #fff8f0
+        );
+
+    border: 1px solid #eadfce;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 15px 40px var(--shadow);
+
+    position: relative;
+}
+
+.notes-section::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 25px;
+    right: 25px;
+
+    height: 4px;
+
+    background: #e5c9a5;
+
+    border-radius: 0 0 10px 10px;
+}
+
+.notes-header {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+}
+
+.notes-header > span {
+    font-size: 32px;
+
+    color: #b58c61;
+}
+
+.notes-header h2 {
+    font-family: "Caveat", cursive;
+
+    font-size: 32px;
+
+    font-weight: 500;
+
+    color: #876d51;
+}
+
+.notes-header p {
+    font-size: 12px;
+
+    color: var(--text-light);
+
+    margin-top: 2px;
+}
+
+.notes-input {
+    width: 100%;
+
+    min-height: 180px;
+
+    resize: vertical;
+
+    border: none;
+
+    outline: none;
+
+    padding: 18px;
+
+    background:
+        repeating-linear-gradient(
+            transparent,
+            transparent 31px,
+            #eadfd2 32px
+        );
+
+    color: var(--text);
+
+    font-family: "Caveat", cursive;
+
+    font-size: 20px;
+
+    line-height: 32px;
+}
+
+.notes-input::placeholder {
+    color: #c4b6aa;
+}
+
+.notes-footer {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-top: 15px;
+}
+
+.notes-footer span {
+    font-size: 10px;
+
+    color: #b2a59b;
+}
+
+.save-button {
+    border: none;
+
+    background: var(--green);
+
+    color: white;
+
+    padding: 10px 20px;
+
+    border-radius: 25px;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.save-button:hover {
+    background: var(--green-dark);
+
+    transform: translateY(-2px);
+}
+
+
+/* ========================================
+   ROTEIRO
+======================================== */
+
+.route-header {
+    width: min(850px, 100%);
+
+    margin: 20px auto 30px;
+
+    text-align: center;
+}
+
+.route-icon {
+    font-size: 42px;
+
+    margin-bottom: 10px;
+}
+
+.route-header > p {
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    color: var(--text-light);
+}
+
+.route-header h1 {
+    font-family: "Caveat", cursive;
+
+    font-size: 50px;
+
+    font-weight: 500;
+
+    color: var(--green-dark);
+
+    margin: 4px 0 15px;
+}
+
+.route-introduction {
+    width: min(600px, 100%);
+
+    margin: auto;
+}
+
+.route-introduction p {
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    color: var(--text);
+}
+
+.route-introduction span {
+    display: inline-block;
+
+    margin-top: 12px;
+
+    font-size: 11px;
+
+    color: var(--green-dark);
+}
+
+
+/* ========================================
+   LOCALIZAÇÃO
+======================================== */
+
+.location-card {
+    width: min(850px, 100%);
+
+    margin: 0 auto 30px;
+
+    padding: 20px 24px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    background: var(--green-light);
+
+    border: 1px solid #d7e4d9;
+
+    border-radius: 18px;
+}
+
+.location-icon {
+    font-size: 30px;
+}
+
+.location-card h2 {
+    font-family: "Caveat", cursive;
+
+    font-size: 26px;
+
+    color: var(--green-dark);
+
+    margin-bottom: 4px;
+}
+
+.location-card p {
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+
+/* ========================================
+   CARTÕES DOS LUGARES
+======================================== */
+
+.places-container {
+    width: min(850px, 100%);
+
+    margin: auto;
+
+    display: grid;
+
+    gap: 20px;
+}
+
+.place-card {
+    position: relative;
+
+    display: flex;
+
+    gap: 20px;
+
+    padding: 28px;
+
+    background: rgba(255, 255, 255, 0.85);
+
+    border: 1px solid #e5e4dc;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 12px 35px var(--shadow);
+
+    transition: 0.3s ease;
+}
+
+.place-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 18px 40px var(--shadow);
+}
+
+.place-number {
+    font-family: "Caveat", cursive;
+
+    font-size: 25px;
+
+    color: #b7b0a2;
+
+    min-width: 30px;
+}
+
+.place-content {
+    flex: 1;
+}
+
+.place-icon {
+    font-size: 30px;
+
+    margin-bottom: 4px;
+}
+
+.place-category {
+    font-size: 11px;
+
+    color: var(--green-dark);
+
+    margin-bottom: 7px;
+}
+
+.place-content h2 {
+    font-family: "Caveat", cursive;
+
+    font-size: 31px;
+
+    line-height: 1.05;
+
+    font-weight: 500;
+
+    color: #5e6e61;
+
+    margin-bottom: 12px;
+}
+
+.place-description {
+    font-size: 13px;
+
+    line-height: 1.75;
+
+    color: var(--text);
+
+    margin-bottom: 18px;
+}
+
+.place-details strong {
+    font-size: 12px;
+
+    color: var(--green-dark);
+}
+
+.place-details ul {
+    margin-top: 8px;
+
+    padding-left: 20px;
+
+    font-size: 12px;
+
+    line-height: 1.8;
+
+    color: var(--text);
+}
+
+.place-tip {
+    margin-top: 18px;
+
+    padding: 12px 14px;
+
+    background: #f4f7f1;
+
+    border-left: 3px solid var(--green);
+
+    border-radius: 8px;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+
+    color: #69756c;
+}
+
+
+/* ========================================
+   FINAL DO ROTEIRO
+======================================== */
+
+.route-ending {
+    width: min(600px, 100%);
+
+    margin: 50px auto 30px;
+
+    text-align: center;
+}
+
+.route-ending span {
+    color: var(--green);
+
+    font-size: 18px;
+}
+
+.route-ending h2 {
+    font-family: "Caveat", cursive;
+
+    font-size: 32px;
+
+    font-weight: 500;
+
+    color: var(--green-dark);
+
+    margin: 10px 0;
+}
+
+.route-ending p {
+    font-size: 12px;
+
+    color: var(--text-light);
+}
+
+
+/* ========================================
+   DICA DE SEGURANÇA
+======================================== */
+
+.safety-note {
+    width: min(700px, 100%);
+
+    margin: 30px auto;
+
+    padding: 20px;
+
+    background: #fff9ed;
+
+    border: 1px solid #eee2c8;
+
+    border-radius: 15px;
+
+    text-align: center;
+}
+
+.safety-note h3 {
+    font-family: "Caveat", cursive;
+
+    font-size: 24px;
+
+    font-weight: 500;
+
+    color: #927c54;
+
+    margin-bottom: 8px;
+}
+
+.safety-note p {
+    font-size: 11px;
+
+    line-height: 1.7;
+
+    color: #817767;
+}
+
+
+/* ========================================
    BOTÃO DE MÚSICA
 ======================================== */
 
@@ -474,7 +1012,7 @@ body {
 
     border: 1px solid #efd5d9;
 
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.92);
 
     color: var(--pink-dark);
 
@@ -666,11 +1204,13 @@ body {
 
     from {
         opacity: 0;
+
         transform: translateY(20px);
     }
 
     to {
         opacity: 1;
+
         transform: translateY(0);
     }
 
@@ -704,12 +1244,18 @@ body {
 
     from {
         opacity: 0;
-        transform: translateY(25px) scale(0.96);
+
+        transform:
+            translateY(25px)
+            scale(0.96);
     }
 
     to {
         opacity: 1;
-        transform: translateY(0) scale(1);
+
+        transform:
+            translateY(0)
+            scale(1);
     }
 
 }
@@ -723,7 +1269,8 @@ body {
 
     50% {
         box-shadow:
-            0 8px 35px rgba(217, 143, 157, 0.4);
+            0 8px 35px
+            rgba(217, 143, 157, 0.4);
     }
 
 }
@@ -737,7 +1284,18 @@ body {
 
     .main-site {
         padding:
-            35px 12px 100px;
+            18px 12px 100px;
+    }
+
+    .navigation {
+        margin-bottom: 25px;
+    }
+
+    .nav-button {
+        font-size: 11px;
+
+        padding:
+            10px 8px;
     }
 
     .header {
@@ -749,7 +1307,8 @@ body {
     }
 
     .calendar-container {
-        padding: 18px 12px;
+        padding:
+            18px 12px;
 
         border-radius: 20px;
     }
@@ -777,6 +1336,51 @@ body {
         bottom: 2px;
 
         font-size: 8px;
+    }
+
+    .notes-section {
+        padding: 22px 18px;
+    }
+
+    .notes-footer {
+        align-items: flex-end;
+
+        flex-direction: column;
+    }
+
+    .notes-footer span {
+        align-self: flex-start;
+    }
+
+    .route-header h1 {
+        font-size: 40px;
+    }
+
+    .place-card {
+        padding: 22px 18px;
+
+        gap: 10px;
+    }
+
+    .place-number {
+        font-size: 20px;
+
+        min-width: 25px;
+    }
+
+    .place-content h2 {
+        font-size: 27px;
+    }
+
+    .location-card {
+        padding: 18px;
+
+        align-items: flex-start;
+    }
+
+    .music-button {
+        bottom: 18px;
+        right: 18px;
     }
 
     .message-card {
