@@ -78,18 +78,18 @@ const specialMessages = {
 
     "2026-07-24": {
         title: "24 de julho ♡",
-        message: "Parabéns Ana!!! Espero que neste ano o seu dia tenha sido completamente especial, com uma linda festa, a compania de pessoas especiais... Que Deus te guie nos teus caminhos, saiba que não importa o quao distante voce esteja, Ele sempre estara la pra te proteger! e um privilegio poder contar contigo e saiba que quando precisar estarei por ai! Es uma guria especial e unica, nao deixe que o mundo/pessoas te mudem. Tmj sempre"
+        message: "Parabéns Ana!!! Espero que neste ano o seu dia tenha sido completamente especial, com uma linda festa, a compania de pessoas especiais... Que Deus te guie nos teus caminhos, saiba que nao importa o quao distante voce esteja, Ele sempre estara la pra te proteger! e um privilegio poder contar contigo e saiba que quando precisar estarei por ai! Es uma guria especial e unica, nao deixe que o mundo/pessoas te mudem. Tmj sempre"
     },
 
     "2026-08-29": {
         title: "29 de agosto ♡",
-        message: "Hoje nos despedimos, por um breve periodo de tempo, de uma membra muito valiosa do grupo. Talvez seja seu ultimo \"capaz\", seu ultimo \"simmmmmm\", seu ultimo \"verdadee...\" escutado no ano. Mas sei que Deus tem planos muito maiores para voce. Nao se prive de viver sua vida por conta das pessoas que voce ama. Estamos torcendo para que voce alcance seus maiores sonhos. Nao so eu, mas todos do grupo estamos muito orgulhosos da mulher que voce esta se tornando. Sempre que estiver deprimida, cansada, triste ou solitaria, saiba que pode contar conosco. Estaremos dispostos a te ajudar. Embora estejamos a 2.500 km de distancia, estamos a apenas alguns cliques de voce."
+        message: "Hoje nos despedimos, por um breve periodo de tempo, de uma membra muito valiosa do grupo. Talvez seja seu ultimo \"capaz\", seu ultimo \"simmmmmm\", seu ultimo \"verdadee...\" escutado no ano. Mas sei que Deus tem planos muito maiores para voce. Nao se prive de viver sua vida por conta das pessoas que voce ama. Estamos torcendo para que voce alcance seus maiores sonhos. Nao so eu, mas todos do grupo estamos muito orgulhosos da mulher que voce esta se tornando. Sempre que estiver deprimida, cansada, triste ou solitaria, saiba que pode contar conosco. Estaremos dispostos a te ajudar. Embora estejamos a 2.500 km de distancia, estamos a apenas alguns cliques de voce. Va, viva, aprenda, cresca e aproveite essa nova fase. E nunca se esqueca: onde quer que voce esteja, sempre tera um grupo de pessoas aqui torcendo por voce e esperando ansiosamente pelo seu proximo \"SIMMMMMMM, VERDADEE...\"."
     },
     "2026-12-31": {
         title: "31 de dezembro ✨",
-        message: "Escreva aqui a mensagem especial para encerrar 2026."
+        message: "Hoje, no ultimo dia do ano (mesmo escrevendo isso no dia 30/08 kkkkk), espero que o seu ano tenha sido feliz e repleto de vitorias. Sei que no meio do caminho ele teve diversas reviravoltas, momentos dificeis e lutas que talvez voce nem tenha contado para ninguem, mas mesmo assim voce aguentou tudo isso. E parabens!! Voce foi para uma terra distante, enfrentou lutas sozinha, aprendeu, cresceu e conquistou muitas coisas. E se existe uma promessa na Biblia que se provou verdadeira na sua vida, e que Deus e contigo. Ele esteve com voce em cada passo, esta contigo agora e continuara contigo nos caminhos que ainda estao por vir. E foi por isso que voce chegou ate aqui. Saiba que eu oro por ti, e sei que nao sou o unico. Mesmo de longe, existem pessoas que torcem por voce, que se orgulham de quem voce esta se tornando e que estarao aqui para comemorar cada nova vitoria contigo. Va em frente, guria. O mundo e grande, a estrada e longa e ainda existe muita coisa esperando por voce. Va e venca o mundo por nos!!"
     }
-
+   
 };
 
 
