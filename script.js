@@ -17,30 +17,9 @@ const months = [
     "Dezembro"
 ];
 
-const weekdays = [
-    "domingo",
-    "segunda-feira",
-    "terça-feira",
-    "quarta-feira",
-    "quinta-feira",
-    "sexta-feira",
-    "sábado"
-];
-
 
 /* ========================================
-   MENSAGENS
-========================================
-
-   Aqui você vai colocar as mensagens.
-
-   O formato é:
-
-   "AAAA-MM-DD": {
-       title: "Título",
-       message: "Mensagem"
-   }
-
+   MENSAGENS ESPECIAIS
 ======================================== */
 
 const specialMessages = {
@@ -83,6 +62,20 @@ const specialMessages = {
     "2026-07-24": {
         title: "24 de julho ♡",
         message: "Sua mensagem especial aqui..."
+    },
+
+    /* NOVA DATA */
+
+    "2026-08-29": {
+        title: "29 de agosto ♡",
+        message: "Uma mensagem especial para este dia..."
+    },
+
+    /* ÚLTIMO DIA DO ANO */
+
+    "2026-12-31": {
+        title: "31 de dezembro ✨",
+        message: "Uma mensagem especial para encerrar 2026..."
     }
 
 };
@@ -90,34 +83,26 @@ const specialMessages = {
 
 /* ========================================
    FOTOS
-========================================
-
-   Você pode associar fotos a determinadas
-   datas.
-
-   Exemplo:
-
-   "2026-01-10": {
-       photo: "fotos/foto01.jpg"
-   }
-
 ======================================== */
 
 const photos = {
 
-    // "2026-01-10": "fotos/foto01.jpg",
-    // "2026-01-11": "fotos/foto02.jpg",
-    // "2026-05-06": "fotos/foto03.jpg"
+    // Exemplo:
+    //
+    // "2026-08-29": "fotos/foto01.jpg",
+    //
+    // "2026-12-31": "fotos/foto02.jpg"
 
 };
 
 
 /* ========================================
-   VARIÁVEIS
+   VARIÁVEIS DO CALENDÁRIO
 ======================================== */
 
 let currentMonth = 0;
-let currentYear = 2026;
+
+const currentYear = 2026;
 
 let musicPlaying = false;
 
@@ -169,7 +154,9 @@ const modalPhoto =
     document.getElementById("modalPhoto");
 
 const modalPhotoContainer =
-    document.getElementById("modalPhotoContainer");
+    document.getElementById(
+        "modalPhotoContainer"
+    );
 
 const musicButton =
     document.getElementById("musicButton");
@@ -179,30 +166,110 @@ const backgroundMusic =
 
 
 /* ========================================
+   NAVEGAÇÃO
+======================================== */
+
+const calendarTab =
+    document.getElementById("calendarTab");
+
+const routeTab =
+    document.getElementById("routeTab");
+
+const calendarPage =
+    document.getElementById("calendarPage");
+
+const routePage =
+    document.getElementById("routePage");
+
+
+calendarTab.addEventListener(
+    "click",
+    () => {
+
+        calendarTab.classList.add("active");
+
+        routeTab.classList.remove("active");
+
+        calendarPage.classList.remove(
+            "hidden-page"
+        );
+
+        routePage.classList.add(
+            "hidden-page"
+        );
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    }
+);
+
+
+routeTab.addEventListener(
+    "click",
+    () => {
+
+        routeTab.classList.add("active");
+
+        calendarTab.classList.remove("active");
+
+        routePage.classList.remove(
+            "hidden-page"
+        );
+
+        calendarPage.classList.add(
+            "hidden-page"
+        );
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    }
+);
+
+
+/* ========================================
    FORMATO DE DATA
 ======================================== */
 
-function formatDate(year, month, day) {
+function formatDate(
+    year,
+    month,
+    day
+) {
 
     const monthString =
-        String(month + 1).padStart(2, "0");
+        String(month + 1)
+            .padStart(2, "0");
 
     const dayString =
-        String(day).padStart(2, "0");
+        String(day)
+            .padStart(2, "0");
 
     return `${year}-${monthString}-${dayString}`;
-
 }
 
 
 /* ========================================
-   VERIFICA SE É SÁBADO A PARTIR DE SETEMBRO
+   SÁBADOS A PARTIR DE SETEMBRO
 ======================================== */
 
-function isSaturdayMessage(year, month, day) {
+function isSaturdayMessage(
+    year,
+    month,
+    day
+) {
 
     const date =
-        new Date(year, month, day);
+        new Date(
+            year,
+            month,
+            day
+        );
 
     const saturday =
         date.getDay() === 6;
@@ -210,8 +277,8 @@ function isSaturdayMessage(year, month, day) {
     const fromSeptember =
         month >= 8;
 
-    return saturday && fromSeptember;
-
+    return saturday &&
+           fromSeptember;
 }
 
 
@@ -231,14 +298,19 @@ function renderCalendar() {
 
 
     /*
-        Primeiro dia do mês.
+        DESABILITAR NAVEGAÇÃO
+        FORA DE 2026
+    */
 
-        getDay():
+    previousMonth.disabled =
+        currentMonth === 0;
 
-        0 = domingo
-        1 = segunda
-        ...
-        6 = sábado
+    nextMonth.disabled =
+        currentMonth === 11;
+
+
+    /*
+        PRIMEIRO DIA
     */
 
     const firstDay =
@@ -250,7 +322,7 @@ function renderCalendar() {
 
 
     /*
-        Quantos dias o mês possui.
+        QUANTOS DIAS
     */
 
     const daysInMonth =
@@ -262,7 +334,7 @@ function renderCalendar() {
 
 
     /*
-        Espaços antes do primeiro dia.
+        ESPAÇOS ANTES DO PRIMEIRO DIA
     */
 
     for (
@@ -274,15 +346,20 @@ function renderCalendar() {
         const emptyDay =
             document.createElement("div");
 
-        emptyDay.classList.add("day", "empty");
+        emptyDay.classList.add(
+            "day",
+            "empty"
+        );
 
-        calendarDays.appendChild(emptyDay);
+        calendarDays.appendChild(
+            emptyDay
+        );
 
     }
 
 
     /*
-        Criar cada dia.
+        CRIAR OS DIAS
     */
 
     for (
@@ -294,7 +371,9 @@ function renderCalendar() {
         const dayElement =
             document.createElement("div");
 
-        dayElement.classList.add("day");
+        dayElement.classList.add(
+            "day"
+        );
 
         dayElement.textContent =
             day;
@@ -309,15 +388,16 @@ function renderCalendar() {
 
 
         /*
-            Existe uma mensagem especial?
+            TEM MENSAGEM?
         */
 
         const hasSpecialMessage =
-            specialMessages[dateKey] !== undefined;
+            specialMessages[dateKey]
+            !== undefined;
 
 
         /*
-            É sábado a partir de setembro?
+            É SÁBADO?
         */
 
         const hasSaturdayMessage =
@@ -329,15 +409,16 @@ function renderCalendar() {
 
 
         /*
-            Existe foto?
+            TEM FOTO?
         */
 
         const hasPhoto =
-            photos[dateKey] !== undefined;
+            photos[dateKey]
+            !== undefined;
 
 
         /*
-            Adicionar estilos.
+            DESTACAR DATA
         */
 
         if (
@@ -345,12 +426,16 @@ function renderCalendar() {
             hasSaturdayMessage
         ) {
 
-            dayElement.classList.add("special");
+            dayElement.classList.add(
+                "special"
+            );
 
         }
 
 
-        if (hasSaturdayMessage) {
+        if (
+            hasSaturdayMessage
+        ) {
 
             dayElement.classList.add(
                 "saturday-message"
@@ -369,8 +454,7 @@ function renderCalendar() {
 
 
         /*
-            Se tiver algum conteúdo,
-            pode clicar.
+            PERMITIR CLIQUE
         */
 
         if (
@@ -381,7 +465,9 @@ function renderCalendar() {
 
             dayElement.addEventListener(
                 "click",
-                () => openMessage(dateKey)
+                () => openMessage(
+                    dateKey
+                )
             );
 
         }
@@ -400,22 +486,20 @@ function renderCalendar() {
    ABRIR MENSAGEM
 ======================================== */
 
-function openMessage(dateKey) {
+function openMessage(
+    dateKey
+) {
 
     const message =
         specialMessages[dateKey];
-
 
     const photo =
         photos[dateKey];
 
 
-    /*
-        Criar data real.
-    */
-
     const parts =
         dateKey.split("-");
+
 
     const year =
         Number(parts[0]);
@@ -427,16 +511,8 @@ function openMessage(dateKey) {
         Number(parts[2]);
 
 
-    const date =
-        new Date(
-            year,
-            month,
-            day
-        );
-
-
     /*
-        Mostrar data.
+        DATA
     */
 
     modalDate.textContent =
@@ -444,7 +520,7 @@ function openMessage(dateKey) {
 
 
     /*
-        Se existir mensagem especial.
+        MENSAGEM
     */
 
     if (message) {
@@ -457,23 +533,19 @@ function openMessage(dateKey) {
 
     }
 
-    /*
-        Se for sábado sem mensagem
-        cadastrada ainda.
-    */
-
     else {
 
         modalTitle.textContent =
-            "Uma mensagem para você ♡";
+            "Uma mensagem para você";
 
         modalContent.textContent =
             "Aqui vai uma frase especial para este sábado...";
+
     }
 
 
     /*
-        Foto.
+        FOTO
     */
 
     if (photo) {
@@ -499,7 +571,7 @@ function openMessage(dateKey) {
 
 
     /*
-        Mostrar modal.
+        MOSTRAR MODAL
     */
 
     messageModal.classList.remove(
@@ -528,10 +600,6 @@ closeModal.addEventListener(
 );
 
 
-/*
-    Fechar clicando fora da carta.
-*/
-
 document
     .querySelector(".modal-overlay")
     .addEventListener(
@@ -539,10 +607,6 @@ document
         closeMessage
     );
 
-
-/*
-    Fechar com ESC.
-*/
 
 document.addEventListener(
     "keydown",
@@ -568,15 +632,11 @@ previousMonth.addEventListener(
     "click",
     () => {
 
-        currentMonth--;
-
-        if (currentMonth < 0) {
-
-            currentMonth = 11;
-
-            currentYear--;
-
+        if (currentMonth === 0) {
+            return;
         }
+
+        currentMonth--;
 
         renderCalendar();
 
@@ -588,15 +648,11 @@ nextMonth.addEventListener(
     "click",
     () => {
 
-        currentMonth++;
-
-        if (currentMonth > 11) {
-
-            currentMonth = 0;
-
-            currentYear++;
-
+        if (currentMonth === 11) {
+            return;
         }
+
+        currentMonth++;
 
         renderCalendar();
 
@@ -620,21 +676,21 @@ startButton.addEventListener(
             "hidden"
         );
 
-        /*
-            Tentar iniciar a música.
 
-            Isso só funcionará quando você
-            colocar um arquivo permitido
-            no elemento <audio>.
+        /*
+            TENTAR INICIAR MÚSICA
         */
 
-        if (backgroundMusic.src) {
+        if (
+            backgroundMusic.src
+        ) {
 
             backgroundMusic
                 .play()
                 .then(() => {
 
-                    musicPlaying = true;
+                    musicPlaying =
+                        true;
 
                     musicButton.classList.add(
                         "playing"
@@ -644,7 +700,7 @@ startButton.addEventListener(
                 .catch(() => {
 
                     console.log(
-                        "A música não pôde iniciar automaticamente."
+                        "A música não pôde iniciar."
                     );
 
                 });
@@ -663,10 +719,12 @@ musicButton.addEventListener(
     "click",
     () => {
 
-        if (!backgroundMusic.src) {
+        if (
+            !backgroundMusic.src
+        ) {
 
             alert(
-                "Primeiro coloque um arquivo de áudio autorizado para uso no site."
+                "Coloque o arquivo musica.mp3 na pasta principal do site."
             );
 
             return;
@@ -678,27 +736,35 @@ musicButton.addEventListener(
 
             backgroundMusic.pause();
 
-            musicPlaying = false;
+            musicPlaying =
+                false;
 
             musicButton.classList.remove(
                 "playing"
             );
 
-            musicButton.textContent = "♫";
+            musicButton.textContent =
+                "♫";
 
         }
 
         else {
 
-            backgroundMusic.play();
+            backgroundMusic
+                .play()
+                .then(() => {
 
-            musicPlaying = true;
+                    musicPlaying =
+                        true;
 
-            musicButton.classList.add(
-                "playing"
-            );
+                    musicButton.classList.add(
+                        "playing"
+                    );
 
-            musicButton.textContent = "♫";
+                    musicButton.textContent =
+                        "♫";
+
+                });
 
         }
 
@@ -707,7 +773,74 @@ musicButton.addEventListener(
 
 
 /* ========================================
-   INICIAR CALENDÁRIO
+   CANTINHO DE ANOTAÇÕES
+======================================== */
+
+const notesInput =
+    document.getElementById(
+        "notesInput"
+    );
+
+const saveNotes =
+    document.getElementById(
+        "saveNotes"
+    );
+
+const saveMessage =
+    document.getElementById(
+        "saveMessage"
+    );
+
+
+/*
+    CARREGAR ANOTAÇÃO SALVA
+*/
+
+const savedNotes =
+    localStorage.getItem(
+        "calendarNotes"
+    );
+
+if (savedNotes) {
+
+    notesInput.value =
+        savedNotes;
+
+}
+
+
+/*
+    SALVAR
+*/
+
+saveNotes.addEventListener(
+    "click",
+    () => {
+
+        localStorage.setItem(
+            "calendarNotes",
+            notesInput.value
+        );
+
+        saveMessage.textContent =
+            "✓ anotação salva!";
+
+        setTimeout(
+            () => {
+
+                saveMessage.textContent =
+                    "suas anotações ficam salvas neste navegador";
+
+            },
+            2500
+        );
+
+    }
+);
+
+
+/* ========================================
+   INICIAR
 ======================================== */
 
 renderCalendar();
