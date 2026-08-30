@@ -2,10 +2,10 @@
 <html lang="pt-BR">
 
 <head>
+
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Um pequeno presente ♡</title>
 
@@ -16,19 +16,46 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap"
         rel="stylesheet">
+
+
+    <!-- ==================================================
+         GOOGLE ANALYTICS
+         ID: G-01TJCJZXCF
+    =================================================== -->
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-01TJCJZXCF"></script>
+
+    <script>
+
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-01TJCJZXCF');
+
+    </script>
+
 </head>
+
 
 <body>
 
-    <!-- =========================
+
+    <!-- ==================================================
          TELA INICIAL
-    ========================== -->
+    =================================================== -->
 
     <section id="welcomeScreen" class="welcome-screen">
 
         <div class="welcome-content">
 
-            <div class="little-flower">✿</div>
+            <div class="little-flower">
+                ✿
+            </div>
 
             <p class="small-title">
                 um pequeno presente
@@ -56,13 +83,17 @@
     </section>
 
 
-    <!-- =========================
+
+    <!-- ==================================================
          SITE PRINCIPAL
-    ========================== -->
+    =================================================== -->
 
     <main id="mainSite" class="main-site hidden">
 
-        <!-- NAVEGAÇÃO -->
+
+        <!-- ==================================================
+             NAVEGAÇÃO
+        =================================================== -->
 
         <nav class="navigation">
 
@@ -73,6 +104,7 @@
                 📅 Calendário
 
             </button>
+
 
             <button
                 id="routeTab"
@@ -85,11 +117,17 @@
         </nav>
 
 
+
         <!-- ==================================================
              ABA DO CALENDÁRIO
         =================================================== -->
 
-        <section id="calendarPage" class="page active-page">
+        <section
+            id="calendarPage"
+            class="page active-page">
+
+
+            <!-- CABEÇALHO -->
 
             <header class="header">
 
@@ -112,11 +150,15 @@
             </header>
 
 
-            <!-- CALENDÁRIO -->
+
+            <!-- ==================================================
+                 CALENDÁRIO
+            =================================================== -->
 
             <section class="calendar-container">
 
                 <div class="calendar-top">
+
 
                     <button
                         id="previousMonth"
@@ -125,6 +167,7 @@
                         ‹
 
                     </button>
+
 
                     <div>
 
@@ -138,6 +181,7 @@
 
                     </div>
 
+
                     <button
                         id="nextMonth"
                         class="month-button">
@@ -147,6 +191,7 @@
                     </button>
 
                 </div>
+
 
 
                 <div class="weekdays">
@@ -162,6 +207,7 @@
                 </div>
 
 
+
                 <div
                     id="calendarDays"
                     class="calendar-days">
@@ -170,31 +216,42 @@
             </section>
 
 
-            <!-- FRASE -->
+
+            <!-- ==================================================
+                 FRASE
+            =================================================== -->
 
             <section class="bottom-message">
 
-                <span>✿</span>
+                <span>
+                    ✿
+                </span>
 
                 <p>
                     algumas datas guardam<br>
                     pequenas surpresas...
                 </p>
 
-                <span>✿</span>
+                <span>
+                    ✿
+                </span>
 
             </section>
 
 
-            <!-- =========================
+
+            <!-- ==================================================
                  CANTINHO DE ANOTAÇÕES
-            ========================== -->
+            =================================================== -->
 
             <section class="notes-section">
 
+
                 <div class="notes-header">
 
-                    <span>✎</span>
+                    <span>
+                        ✎
+                    </span>
 
                     <div>
 
@@ -211,11 +268,12 @@
                 </div>
 
 
+
                 <textarea
                     id="notesInput"
                     class="notes-input"
-                    placeholder="Escreva alguma coisa aqui...">
-                </textarea>
+                    placeholder="Escreva alguma coisa aqui..."></textarea>
+
 
 
                 <div class="notes-footer">
@@ -223,6 +281,7 @@
                     <span id="saveMessage">
                         suas anotações ficam salvas neste navegador
                     </span>
+
 
                     <button
                         id="saveNotes"
@@ -239,6 +298,7 @@
         </section>
 
 
+
         <!-- ==================================================
              ABA DO ROTEIRO
         =================================================== -->
@@ -246,6 +306,7 @@
         <section
             id="routePage"
             class="page hidden-page">
+
 
             <header class="route-header">
 
@@ -260,6 +321,7 @@
                 <h1>
                     Um pequeno roteiro 🌿
                 </h1>
+
 
                 <div class="route-introduction">
 
@@ -278,7 +340,10 @@
             </header>
 
 
-            <!-- LOCALIZAÇÃO DO UNIAENE -->
+
+            <!-- ==================================================
+                 LOCALIZAÇÃO DO UNIAENE
+            =================================================== -->
 
             <section class="location-card">
 
@@ -293,7 +358,9 @@
                     </h2>
 
                     <p>
-                        <strong>UNIAENE</strong>
+                        <strong>
+                            UNIAENE
+                        </strong>
                     </p>
 
                     <p>
@@ -307,9 +374,10 @@
             </section>
 
 
-            <!-- =========================
+
+            <!-- ==================================================
                  LUGARES
-            ========================== -->
+            =================================================== -->
 
             <section class="places-container">
 
@@ -370,14 +438,17 @@
                         </div>
 
                         <div class="place-tip">
+
                             📌 Ideal para conhecer um pouco
                             da história de Cachoeira e
                             passear durante o dia.
+
                         </div>
 
                     </div>
 
                 </article>
+
 
 
                 <!-- CARMO -->
@@ -435,13 +506,16 @@
                         </div>
 
                         <div class="place-tip">
+
                             📌 Ideal para quem gosta de história,
                             arquitetura e cultura.
+
                         </div>
 
                     </div>
 
                 </article>
+
 
 
                 <!-- PONTE -->
@@ -501,13 +575,16 @@
                         </div>
 
                         <div class="place-tip">
+
                             📌 Ideal para uma caminhada e
                             algumas fotos.
+
                         </div>
 
                     </div>
 
                 </article>
+
 
 
                 <!-- CASA DA CULTURA -->
@@ -565,13 +642,16 @@
                         </div>
 
                         <div class="place-tip">
+
                             📌 Ideal para continuar o passeio
                             depois de atravessar a ponte.
+
                         </div>
 
                     </div>
 
                 </article>
+
 
 
                 <!-- CABUÇU -->
@@ -631,22 +711,30 @@
                         </div>
 
                         <div class="place-tip">
+
                             📌 Ideal para passar um dia
                             diferente fora da rotina da faculdade.
+
                         </div>
 
                     </div>
 
                 </article>
 
+
             </section>
 
 
-            <!-- FINAL DO ROTEIRO -->
+
+            <!-- ==================================================
+                 FINAL DO ROTEIRO
+            =================================================== -->
 
             <section class="route-ending">
 
-                <span>✿</span>
+                <span>
+                    ✿
+                </span>
 
                 <h2>
                     E ainda tem muito lugar
@@ -658,12 +746,17 @@
                     ao longo do tempo.
                 </p>
 
-                <span>✿</span>
+                <span>
+                    ✿
+                </span>
 
             </section>
 
 
-            <!-- SEGURANÇA -->
+
+            <!-- ==================================================
+                 SEGURANÇA
+            =================================================== -->
 
             <section class="safety-note">
 
@@ -684,7 +777,10 @@
         </section>
 
 
-        <!-- BOTÃO DE MÚSICA -->
+
+        <!-- ==================================================
+             BOTÃO DE MÚSICA
+        =================================================== -->
 
         <button
             id="musicButton"
@@ -696,7 +792,10 @@
         </button>
 
 
-        <!-- ÁUDIO -->
+
+        <!-- ==================================================
+             ÁUDIO
+        =================================================== -->
 
         <audio
             id="backgroundMusic"
@@ -708,7 +807,9 @@
 
         </audio>
 
+
     </main>
+
 
 
     <!-- ==================================================
@@ -719,9 +820,12 @@
         id="messageModal"
         class="modal hidden">
 
+
         <div class="modal-overlay"></div>
 
+
         <div class="message-card">
+
 
             <button
                 id="closeModal"
@@ -731,9 +835,11 @@
 
             </button>
 
+
             <div class="card-flower">
                 ✿
             </div>
+
 
             <p
                 id="modalDate"
@@ -743,9 +849,11 @@
 
             </p>
 
+
             <h2 id="modalTitle">
                 Uma pequena mensagem
             </h2>
+
 
             <div
                 id="modalContent"
@@ -754,6 +862,7 @@
                 Sua mensagem aparecerá aqui.
 
             </div>
+
 
             <div
                 id="modalPhotoContainer"
@@ -766,16 +875,24 @@
 
             </div>
 
+
             <div class="card-heart">
                 ♡
             </div>
+
 
         </div>
 
     </div>
 
 
+
+    <!-- ==================================================
+         JAVASCRIPT
+    =================================================== -->
+
     <script src="script.js"></script>
+
 
 </body>
 
