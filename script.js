@@ -809,25 +809,24 @@ musicButton.addEventListener(
 
         if (!backgroundMusic.currentSrc) {
 
-    backgroundMusic.src = "musica.mp3";
-    backgroundMusic.load();
+            backgroundMusic.src = "musica.mp3";
 
-}
+            backgroundMusic.load();
+
+        }
 
 
         if (musicPlaying) {
 
             backgroundMusic.pause();
 
-            musicPlaying =
-                false;
+            musicPlaying = false;
 
             musicButton.classList.remove(
                 "playing"
             );
 
-            musicButton.textContent =
-                "♫";
+            musicButton.textContent = "♫";
 
         }
 
@@ -837,15 +836,21 @@ musicButton.addEventListener(
                 .play()
                 .then(() => {
 
-                    musicPlaying =
-                        true;
+                    musicPlaying = true;
 
                     musicButton.classList.add(
                         "playing"
                     );
 
-                    musicButton.textContent =
-                        "♫";
+                    musicButton.textContent = "♫";
+
+                })
+                .catch((error) => {
+
+                    console.error(
+                        "Erro ao tocar a música:",
+                        error
+                    );
 
                 });
 
