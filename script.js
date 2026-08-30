@@ -31,57 +31,49 @@ const specialMessages = {
 
     "2026-01-16": {
         title: "16 de janeiro ♡",
-        message: "Escreva aqui a mensagem do dia 16."
+        message: "Minha casa provisoria"
     },
 
     "2026-01-17": {
         title: "17 de janeiro ♡",
-        message: "Escreva aqui a mensagem do dia 17."
+        message: "Minha cama"
     },
 
     "2026-01-18": {
         title: "18 de janeiro ♡",
-        message: "Escreva aqui a mensagem do dia 18."
     },
 
     "2026-01-19": {
         title: "19 de janeiro ♡",
-        message: "Escreva aqui a mensagem do dia 19."
     },
 
     "2026-01-20": {
         title: "20 de janeiro ♡",
-        message: "Escreva aqui a mensagem do dia 20."
     },
 
     "2026-01-21": {
         title: "21 de janeiro ♡",
-        message: "Escreva aqui a mensagem do dia 21."
     },
 
     "2026-01-22": {
         title: "22 de janeiro ♡",
-        message: "Escreva aqui a mensagem do dia 22."
     },
 
     "2026-01-23": {
         title: "23 de janeiro ♡",
-        message: "Escreva aqui a mensagem do dia 23."
     },
 
     "2026-01-24": {
         title: "24 de janeiro ♡",
-        message: "Escreva aqui a mensagem do dia 24."
     },
 
     "2026-01-25": {
         title: "25 de janeiro ♡",
-        message: "Escreva aqui a mensagem do dia 25."
     },
 
     "2026-05-06": {
         title: "06 de maio ♡",
-        message: "Escreva aqui a mensagem especial."
+        message: "Como tacar uma pedra: Pegar uma pedra com a parte de baixo mais lisa. O objetivo e lançar a pedra o mais próximo e paralelo possível em relação à linha da agua. a pedra deve ficar a uns 20° da agua."
     },
 
     "2026-07-24": {
