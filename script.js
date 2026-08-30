@@ -101,6 +101,7 @@ const specialMessages = {
 
 };
 
+
 /* ========================================
    FOTOS
 ======================================== */
@@ -136,6 +137,7 @@ const photos = {
     "2026-01-25": "fotos/10.jpg"
 
 };
+
 
 /* ========================================
    VARIÁVEIS DO CALENDÁRIO
@@ -529,14 +531,25 @@ function renderCalendar() {
 
 function openMessage(dateKey) {
 
-    const message = specialMessages[dateKey];
-    const photo = photos[dateKey];
+    const message =
+        specialMessages[dateKey];
 
-    const parts = dateKey.split("-");
+    const photo =
+        photos[dateKey];
 
-    const year = Number(parts[0]);
-    const month = Number(parts[1]) - 1;
-    const day = Number(parts[2]);
+
+    const parts =
+        dateKey.split("-");
+
+
+    const year =
+        Number(parts[0]);
+
+    const month =
+        Number(parts[1]) - 1;
+
+    const day =
+        Number(parts[2]);
 
 
     /*
@@ -564,10 +577,10 @@ function openMessage(dateKey) {
     else {
 
         modalTitle.textContent =
-            "Uma mensagem para você";
+            "Uma mensagem para você ♡";
 
         modalContent.textContent =
-            "Aqui vai uma frase especial para este dia...";
+            "Aqui vai uma frase especial para este sábado...";
 
     }
 
@@ -598,7 +611,10 @@ function openMessage(dateKey) {
                 const image =
                     document.createElement("img");
 
-                image.src = photoPath;
+
+                image.src =
+                    photoPath;
+
 
                 image.alt =
                     "Foto especial";
@@ -636,52 +652,6 @@ function openMessage(dateKey) {
     );
 
 }
-    else {
-
-        modalTitle.textContent =
-            "Uma mensagem para você";
-
-        modalContent.textContent =
-            "Aqui vai uma frase especial para este sábado...";
-
-    }
-
-
-    /*
-        FOTO
-    */
-
-    if (photo) {
-
-        modalPhoto.src =
-            photo;
-
-        modalPhotoContainer.classList.remove(
-            "hidden"
-        );
-
-    }
-
-    else {
-
-        modalPhotoContainer.classList.add(
-            "hidden"
-        );
-
-        modalPhoto.src = "";
-
-    }
-
-
-    /*
-        MOSTRAR MODAL
-    */
-
-    messageModal.classList.remove(
-        "hidden"
-    );
-
-}
 
 
 /* ========================================
@@ -703,6 +673,10 @@ closeModal.addEventListener(
 );
 
 
+/*
+    FECHAR CLICANDO FORA
+*/
+
 document
     .querySelector(".modal-overlay")
     .addEventListener(
@@ -710,6 +684,10 @@ document
         closeMessage
     );
 
+
+/*
+    FECHAR COM ESC
+*/
 
 document.addEventListener(
     "keydown",
@@ -735,8 +713,12 @@ previousMonth.addEventListener(
     "click",
     () => {
 
-        if (currentMonth === 0) {
+        if (
+            currentMonth === 0
+        ) {
+
             return;
+
         }
 
         currentMonth--;
@@ -751,8 +733,12 @@ nextMonth.addEventListener(
     "click",
     () => {
 
-        if (currentMonth === 11) {
+        if (
+            currentMonth === 11
+        ) {
+
             return;
+
         }
 
         currentMonth++;
@@ -904,6 +890,7 @@ const savedNotes =
         "calendarNotes"
     );
 
+
 if (savedNotes) {
 
     notesInput.value =
@@ -925,8 +912,10 @@ saveNotes.addEventListener(
             notesInput.value
         );
 
+
         saveMessage.textContent =
             "✓ anotação salva!";
+
 
         setTimeout(
             () => {
