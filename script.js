@@ -24,33 +24,58 @@ const months = [
 
 const specialMessages = {
 
-    "2026-01-10": {
-        title: "10 de janeiro ♡",
-        message: "Sua mensagem aqui..."
-    },
-
-    "2026-01-11": {
-        title: "11 de janeiro ♡",
-        message: "Sua mensagem aqui..."
-    },
-
-    "2026-01-12": {
-        title: "12 de janeiro ♡",
-        message: "Sua mensagem aqui..."
-    },
-
-    "2026-01-13": {
-        title: "13 de janeiro ♡",
-        message: "Sua mensagem aqui..."
-    },
-
-    "2026-01-14": {
-        title: "14 de janeiro ♡",
-        message: "Sua mensagem aqui..."
-    },
-
     "2026-01-15": {
         title: "15 de janeiro ♡",
+        message: "Sua mensagem aqui..."
+    },
+
+    "2026-01-16": {
+        title: "16 de janeiro ♡",
+        message: "Sua mensagem aqui..."
+    },
+
+    "2026-01-17": {
+        title: "17 de janeiro ♡",
+        message: "Sua mensagem aqui..."
+    },
+
+    "2026-01-18": {
+        title: "18 de janeiro ♡",
+        message: "Sua mensagem aqui..."
+    },
+
+    "2026-01-19": {
+        title: "19 de janeiro ♡",
+        message: "Sua mensagem aqui..."
+    },
+
+    "2026-01-20": {
+        title: "20 de janeiro ♡",
+        message: "Sua mensagem aqui..."
+    },
+
+    "2026-01-21": {
+        title: "21 de janeiro ♡",
+        message: "Sua mensagem aqui..."
+    },
+
+    "2026-01-22": {
+        title: "22 de janeiro ♡",
+        message: "Sua mensagem aqui..."
+    },
+
+    "2026-01-23": {
+        title: "23 de janeiro ♡",
+        message: "Sua mensagem aqui..."
+    },
+
+    "2026-01-24": {
+        title: "24 de janeiro ♡",
+        message: "Sua mensagem aqui..."
+    },
+
+    "2026-01-25": {
+        title: "25 de janeiro ♡",
         message: "Sua mensagem aqui..."
     },
 
@@ -64,14 +89,10 @@ const specialMessages = {
         message: "Sua mensagem especial aqui..."
     },
 
-    /* NOVA DATA */
-
     "2026-08-29": {
         title: "29 de agosto ♡",
         message: "Uma mensagem especial para este dia..."
     },
-
-    /* ÚLTIMO DIA DO ANO */
 
     "2026-12-31": {
         title: "31 de dezembro ✨",
