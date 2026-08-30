@@ -113,7 +113,13 @@ const saturdayMessages = {
 
     "2026-09-05": {
         title: "05 de setembro ♡",
-        message: "Escreva aqui a mensagem do dia 05."
+        message: "Ir sem saber tudo
+
+Texto biblico: Hebreus 11:8
+Reflexao:
+Abraao partiu sem saber para onde estava indo. Voce tambem nao precisa conhecer todos os detalhes do caminho para dar o primeiro passo. Talvez esteja indo para longe de tudo que conhece, mas nao esta indo para longe de Deus. Ele nao precisa te mostrar o caminho inteiro. Basta confiar que Ele estara presente em cada parte dele.
+Lembrete:
+Voce nao precisa saber tudo sobre o amanha para confiar nAquele que ja esta la."
     },
 
     "2026-09-12": {
